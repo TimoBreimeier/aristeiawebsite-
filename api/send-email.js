@@ -54,7 +54,7 @@ Diese Email wurde automatisch von deiner ARISTEIA Website gesendet.
 
     // Email an dich senden
     await resend.emails.send({
-      from: 'noreply@aristeiaconsulting.de',
+      from: 'onboarding@resend.dev',
       to: 'timo@aristeiaconsulting.de',
       subject: type === 'check' ? 'Kurz-Check Ergebnis von ' + name : 'Neue Kontaktanfrage von ' + name,
       html: emailContent.replace(/\n/g, '<br>'),
@@ -62,7 +62,7 @@ Diese Email wurde automatisch von deiner ARISTEIA Website gesendet.
 
     // Bestätigungs-Email an den Besucher senden
     await resend.emails.send({
-      from: 'noreply@aristeiaconsulting.de',
+      from: 'onboarding@resend.dev',
       to: email,
       subject: 'Danke für deine Anfrage - ARISTEIA',
       html: `
