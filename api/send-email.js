@@ -57,7 +57,7 @@ Diese Email wurde automatisch von deiner ARISTEIA Website gesendet.
       from: 'onboarding@resend.dev',
       to: 'timo@aristeiaconsulting.de',
       subject: type === 'check' ? 'Kurz-Check Ergebnis von ' + name : 'Neue Kontaktanfrage von ' + name,
-      html: emailContent.replace(/\n/g, '<br>'),
+      html: `<div style="font-family: Arial, sans-serif; white-space: pre-wrap;">${emailContent.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>`,
     });
 
     // Bestätigungs-Email an den Besucher senden
