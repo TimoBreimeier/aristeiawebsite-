@@ -1032,12 +1032,18 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 .stack::-webkit-scrollbar,.bento::-webkit-scrollbar{display:none}
 .stack{margin-top:56px;gap:12px;padding:0 24px 4px;scroll-padding:0 24px;align-items:flex-start}
 .stack-card{flex:0 0 86%;scroll-snap-align:start;transform:none!important;filter:none!important}
-.stack-card{padding:14px;gap:14px;min-height:0;align-content:start}
+.stack-card{padding:14px;gap:14px;min-height:0;align-content:start;position:relative;overflow:hidden;border:0;background:#1B2534;isolation:isolate}
 .stack-copy{padding:8px 4px 0;gap:8px}
 .stack-copy h3{font-size:20px;margin-top:2px}
 .stack-copy p{font-size:13.5px;line-height:1.42}
-.stack-media{min-height:0;background:none!important;border-radius:0;overflow:visible}
-.stack-media > img,.stack-media .tint{display:none}
+.stack-media{min-height:0;background:none!important;border-radius:0;overflow:visible;position:static}
+.stack-media.rv,.stack-media.rv.in{transform:none!important;filter:none!important}
+.stack-media > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.stack-media .tint{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(14,20,32,.62) 0%,rgba(14,20,32,.42) 55%,rgba(14,20,32,.55) 100%)!important}
+.stack-copy h3{color:#FFFFFF}
+.stack-copy p{color:rgba(255,255,255,.86)}
+.stack-copy .label{color:#FFFFFF}
+.stack-copy .label i{background:#FFFFFF}
 .stack-media .overlay{position:static;padding:0;margin:0}
 .stack-media .panel{padding:14px 16px;width:100%;background:#FFFFFF}
 .stack-media .const{position:static;display:flex;flex-wrap:wrap;gap:8px}
@@ -1050,7 +1056,7 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 .stack-media .panel li:nth-child(n+4){display:none}
 .stack-media .panel li span:first-child{min-width:0}
 .stack-media .panel li span:last-child{white-space:nowrap;flex-shrink:0}
-.stack-media .glass{padding:14px 16px;width:100%;background:var(--ink);backdrop-filter:none;-webkit-backdrop-filter:none}
+.stack-media .glass{padding:14px 16px;width:100%;background:rgba(14,20,32,.72)}
 .stack-media .glass{display:grid;grid-template-columns:auto 1fr;align-items:end;column-gap:14px}
 .stack-media .glass > div:first-child{grid-column:1 / -1;margin-bottom:6px}
 .stack-media .glass .big{font-size:30px}
