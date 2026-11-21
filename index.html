@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded',function(){document.querySelectorAl
   --white:#FFFFFF; --off:#FAFAF9; --card:#F4F4F2; --sand:#F1EEEA; --line:#E4E4E0;
   --sans:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
   --serif:'Newsreader',Georgia,serif;
-  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --mono:'Instrument Sans','Helvetica Neue',Arial,sans-serif;
   --wrap:1200px;
 }
 *{box-sizing:border-box}
@@ -979,6 +979,7 @@ html{scroll-behavior:auto}
 .btn:hover .arr{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.rv,.hw,.hero-copy p,.hero-copy .btn,.hero-facts,.msgs > *,.stat-grid > div{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}.hero-media img,.hero-media video,.float,.ld{animation:none}}
 /* CTA + Dialoge + FAQ */
+button,input,textarea,select{font-family:inherit}
 .nav .menu-toggle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
 .cta{display:flex;flex-direction:column;align-items:center;gap:10px}
 .founder-copy .cta,.metrics .cta{align-items:flex-start}
