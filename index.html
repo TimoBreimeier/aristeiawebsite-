@@ -1030,7 +1030,7 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 @media (max-width:860px){
 .stack,.bento{flex-direction:row;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .stack::-webkit-scrollbar,.bento::-webkit-scrollbar{display:none}
-.stack{margin-top:56px;gap:12px;padding:0 24px 4px;scroll-padding:0 24px;align-items:flex-start}
+.stack{margin-top:56px;gap:12px;padding:0 24px 4px;scroll-padding:0 24px}
 .stack-card{flex:0 0 86%;scroll-snap-align:start;transform:none!important;filter:none!important}
 .stack-card{padding:14px;gap:14px;min-height:0;align-content:start;position:relative;overflow:hidden;border:0;background:#1B2534;isolation:isolate}
 .stack-copy{padding:8px 4px 0;gap:8px}
@@ -1123,6 +1123,11 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
   // Einblenden beim Scrollen
   var groups = ['.topics .lead', '.topics .btn', '.chips', '.stats .btn', '.how .lead', '.how .btn', '.stack-copy', '.stack-media', '.metrics .copy p', '.metrics .copy .btn', '.bento-head .lead', '.bento-head .btn', '.tile', '.check-box', '.team-head .lead', '.team-head .btn', '.person', '.doc', '.quals span', '.voices .lead', '.voice', '.trust', '.app .lead', '.app .btn', '.app-media', '.tools', '.map-card', '.cols > div', '.news'];
   groups.forEach(function(sel){ $(sel).forEach(function(el, i){ el.classList.add('rv'); el.style.transitionDelay = ((i % 5) * 0.08).toFixed(2) + 's'; }); });
+  var narrow = window.innerWidth <= 860;
+  if (narrow) {
+    $('.stack .rv, .bento .rv').forEach(function(el){ el.classList.remove('rv'); el.style.transitionDelay = ''; });
+    $('.stack, .bento').forEach(function(el){ el.classList.add('rv'); });
+  }
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
@@ -1150,7 +1155,7 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
       tn.textContent = s; if (p < 1) requestAnimationFrame(step); else tn.textContent = final; })(start);
   };
   var io3 = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if (en.isIntersecting) { scramble(en.target); io3.unobserve(en.target); } }); }, { threshold: 1 });
-  $('.label, .tag, .hero-facts span, .panel .k, .wtiles .k').forEach(function(el){ io3.observe(el); });
+  $('.label, .tag, .hero-facts span, .panel .k, .wtiles .k').forEach(function(el){ if (!(narrow && el.closest('.stack, .bento'))) io3.observe(el); });
 
   // Chat erscheint nach und nach
   var msgs = document.querySelector('.msgs');
