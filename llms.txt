@@ -1,0 +1,42 @@
+# ARISTEIA
+
+> ARISTEIA ist das Gesundheits-Angebot von Timo Breimeier (ARISTEIA Consulting, Markdorf) für Unternehmer und Führungskräfte am Bodensee. Gesundheit wird geführt wie ein Unternehmen: mit Standortbestimmung, Gesundheits-Businessplan, wöchentlichem Controlling über Kennzahlen und einer Beiratssitzung jedes Quartal.
+
+## Für wen
+
+- Unternehmer, Gründer, Geschäftsführer, Vorstände, Führungskräfte und Selbstständige mit eigener Praxis, Kanzlei oder eigenem Büro
+- Region: Bodensee, u. a. Bodenseekreis, Friedrichshafen, Überlingen, Markdorf, Meersburg, Ravensburg, Lindau, Konstanz, Tettnang
+- ARISTEIA begleitet gesunde Erwachsene beim Lebensstil. Diagnose und Behandlung bleiben beim Arzt.
+
+## Ablauf
+
+- Erstgespräch: kostenlos, 30 Minuten, per Video
+- Standortbestimmung: Check-up mit Blutwerten bei deinem Arzt, 14 Tage WHOOP-Daten, Messungen und Bewegungs-Check, drei Stunden persönlich in Woche 3
+- Gesundheits-Businessplan: drei Quartalsziele mit Kennzahl, Trainingsplan, Ernährungsrahmen, Zeitbudget und Plan B
+- Begleitung: jede Woche Check-in und Wochenbericht, jeden Monat ein persönlicher Termin
+- Beiratssitzung: am Ende jedes Quartals drei Stunden persönlich, Kennzahlen prüfen, neue Ziele für die nächsten 90 Tage
+- Werkzeuge: WhatsApp Business und WHOOP, die WHOOP-Mitgliedschaft ist inklusive
+- Medizinischer Partner: OA Dr. Johannes Sailer, Facharzt für Orthopädie, berät im Hintergrund bei orthopädischen Fragen
+
+## Häufige Fragen
+
+- Zeitaufwand: etwa 1,5 bis 2,5 Stunden pro Woche, Training eingerechnet
+- Kosten: werden im kostenlosen Erstgespräch besprochen, passend zum Ziel
+- Online oder persönlich: Erstgespräch per Video, Standortbestimmung, monatliche Termine und Beiratssitzung persönlich am Bodensee
+- Arzt: vor der Standortbestimmung ein Check-up mit Blutwerten beim eigenen Arzt, Laborwerte bewertet nur der Arzt
+- Reisen: Plan für Reisetage und eine 10-Minuten-Fassung des Trainings
+- Kündigung: nach dem ersten Quartal monatlich kündbar, eine E-Mail reicht
+
+## Über Timo Breimeier
+
+- Gründer und Gesundheits-Sparringspartner
+- Diplom Sport und Gesundheit, Ernährungsberater (IST), lizenzierter Fitnesstrainer
+- Schwerpunkt: Unternehmer und Führungskräfte
+
+## Links
+
+- [Startseite](https://aristeiawebsite.vercel.app/)
+- [Kurz-Check, sieben Fragen](https://aristeiawebsite.vercel.app/kurz-check)
+- [Impressum](https://aristeiawebsite.vercel.app/impressum)
+- [Datenschutz](https://aristeiawebsite.vercel.app/datenschutz)
+- Kontakt: timo@aristeiaconsulting.de
