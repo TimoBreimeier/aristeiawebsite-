@@ -45,7 +45,7 @@ export default async function handler(req, res) {
   const ip = req.headers['x-forwarded-for']?.split(',')[0] || req.socket.remoteAddress;
 
   try {
-    const { type, firstName, lastName, email, company, role, phone, message, name, answers, honeypot } = req.body;
+    const { type, firstName, lastName, email, company, role, phone, message, name, answers, persona, honeypot } = req.body;
     const idempotencyKey = req.headers['idempotency-key'] || randomUUID();
 
     if (honeypot) return res.status(200).json({ success: true });
@@ -56,14 +56,11 @@ export default async function handler(req, res) {
       if (!validateEmail(email)) return res.status(400).json({ error: 'Invalid email' });
 
       const timestamp = new Date().toLocaleString('de-DE', { timeZone: 'Europe/Berlin' });
-      const questions = ['Wie viel Schlaf bekommst du?', 'Wie oft trainierst du?', 'Ernährungszufriedenheit?', 'Wie ist dein Stressniveau?', 'Wasser pro Tag?', 'Wie fit fühlst du dich?', 'Hast du klare Ziele?', 'Brauchst du Unterstützung?'];
-      const scoreMap = { 'less-5': 0, '5-6': 1, '6-7': 2, '7-8': 2, '8-plus': 3, '0': 0, '1': 1, '3': 2, '5': 3, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, 'less-1': 0, '1-2': 1, '2-3': 2, '3-plus': 3, 'no': 0, 'unclear': 1, 'yes': 2, 'maybe': 1 };
-      let score = (scoreMap[answers[0]] || 0) + (scoreMap[answers[1]] || 0) + (scoreMap[answers[2]] || 0) + (scoreMap[answers[3]] || 0) + (scoreMap[answers[4]] || 0) + (scoreMap[answers[5]] || 0) + (scoreMap[answers[6]] || 0) + (scoreMap[answers[7]] || 0);
+      const questions = ['Was beschreibt dich am besten?', 'Wie viel Energie hast du an einem normalen Arbeitstag um 15 Uhr noch?', 'Wie erholt startest du in den Tag?', 'Wie sieht Bewegung bei dir gerade aus?', 'Was würde dir am meisten helfen?', 'Was soll in den nächsten 12 Monaten anders sein?', 'Wann möchtest du starten?'];
+      if (!Array.isArray(answers) || answers.length !== questions.length) return res.status(400).json({ error: 'Invalid answers' });
+      const resultText = { EINSTIEG: 'Einstieg', STRUKTUR: 'Struktur', ERHOLUNG: 'Erholung' }[persona] || '-';
 
-      let result = score < 10 ? 'not-fit' : score < 18 ? 'maybe' : 'perfect';
-      let resultText = { 'not-fit': 'Nicht ideal', 'maybe': 'Interessant', 'perfect': 'Perfekt' }[result];
-
-      let answersHtml = questions.map((q, i) => `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>F${i+1}: ${q}</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${escapeHtml(answers[i] || '-')}</td></tr>`).join('');
+      let answersHtml = questions.map((q, i) => `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>F${i+1}: ${q}</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${escapeHtml(String(answers[i] || '-'))}</td></tr>`).join('');
 
       const checkHtml = `
       <table style="width:100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 14px;">
@@ -72,13 +69,12 @@ export default async function handler(req, res) {
         <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Telefon:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${escapeHtml(phone)}</td></tr>
         <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;" colspan="2"><strong style="color: #333;">ANTWORTEN:</strong></td></tr>
         ${answersHtml}
-        <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Score:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${score}/27</td></tr>
-        <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Ergebnis:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>${resultText}</strong></td></tr>
+        <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Ergebnis (intern):</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>${resultText}</strong></td></tr>
         <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Zeitstempel:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${timestamp}</td></tr>
       </table>`;
 
       await sendEmailWithFallback(process.env.CONTACT_TO || 'timo@aristeiaconsulting.de', `Kurz-Check Ergebnis: ${name} (${resultText})`, checkHtml, email);
-      await sendEmailWithFallback(email, 'Dein Kurz-Check Ergebnis', `<h2>Hallo ${escapeHtml(name)},</h2><p>danke für deine Teilnahme am Kurz-Check! Dein Ergebnis: <strong>${resultText}</strong></p><p>Ich melde mich bald bei dir!</p><p>Viele Grüße<br><strong>Timo Breimeier</strong></p>`, process.env.CONTACT_REPLY_TO || 'timo@aristeiaconsulting.de');
+      await sendEmailWithFallback(email, 'Dein Kurz-Check bei ARISTEIA', `<h2>Hallo ${escapeHtml(name)},</h2><p>danke für deine Antworten im Kurz-Check. Sie sind bei mir angekommen.</p><p>Ich melde mich innerhalb von zwei Werktagen persönlich bei dir, um ein Erstgespräch zu vereinbaren.</p><p>Viele Grüße<br><strong>Timo Breimeier</strong></p>`, process.env.CONTACT_REPLY_TO || 'timo@aristeiaconsulting.de');
     } else {
       if (!firstName || !lastName || !email || !company || !phone) return res.status(400).json({ error: 'Missing required fields' });
       if (!validateEmail(email)) return res.status(400).json({ error: 'Invalid email' });
