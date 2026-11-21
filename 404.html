@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Seite nicht gefunden. Kehre zur ARISTEIA-Hauptseite zurück.">
+  <title>404 - Seite nicht gefunden - ARISTEIA</title>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <style>
+    :root {
+      --ink: #0E1420;
+      --text: #2E2F2C;
+      --muted: #5F605C;
+      --white: #FFFFFF;
+      --off: #FAFAF9;
+      --sand: #F1EEEA;
+      --sans: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+      --serif: 'Newsreader', Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      padding: 24px 0;
+      border-bottom: 1px solid #E4E4E0;
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .error-section {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+    }
+
+    .error-content {
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-family: var(--serif);
+      font-size: clamp(5rem, 10vw, 8rem);
+      font-weight: 400;
+      line-height: 1;
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0 0 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: var(--muted);
+      margin: 0 0 40px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 30px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #F4F4F3;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      border: 0;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    footer {
+      background: var(--ink);
+      color: #F4F4F3;
+      padding: 40px 0 20px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 80px;
+    }
+
+    footer a {
+      color: #F4F4F3;
+      text-decoration: none;
+      opacity: 0.8;
+    }
+
+    footer a:hover {
+      opacity: 1;
+    }
+
+    .footer-links {
+      margin: 20px 0 0;
+    }
+
+    .footer-links a {
+      margin: 0 16px;
+    }
+
+    @media (max-width: 768px) {
+      .error-section {
+        min-height: 60vh;
+        padding: 40px 24px;
+      }
+
+      .error-code {
+        font-size: 4rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="/">ARISTEIA</a>
+    </div>
+  </nav>
+
+  <section class="error-section">
+    <div class="error-content">
+      <div class="error-code">404</div>
+      <h1>Seite nicht gefunden</h1>
+      <p>Die Seite, die du suchst, existiert nicht oder wurde verschoben. Kehre zur Hauptseite zurück und entdecke, wie ich dir bei deiner Gesundheit und Leistung helfen kann.</p>
+      <a href="/" class="btn">Zur Hauptseite</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Timo Breimeier · ARISTEIA Consulting · Alle Rechte vorbehalten</p>
+      <div class="footer-links">
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

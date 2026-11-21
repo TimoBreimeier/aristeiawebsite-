@@ -14,10 +14,16 @@
 <meta name="twitter:title" content="ARISTEIA · Gesundheits-Sparringspartner">
 <meta name="twitter:description" content="Personalisiertes Gesundheits-Coaching für Unternehmer am Bodensee">
 <title>ARISTEIA · Gesundheits-Sparringspartner für Unternehmer am Bodensee</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<script>
+window.SITE_CONFIG={
+  newsletter:false,
+  sailerZitat:false
+};
+document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-config]').forEach(function(el){if(window.SITE_CONFIG[el.dataset.config])el.hidden=false})});
+</script>
 <style>
+[hidden]{display:none!important}
 :root{
   --ink:#0E1420; --text:#2E2F2C; --muted:#5F605C; --soft:#8B8C87;
   --white:#FFFFFF; --off:#FAFAF9; --card:#F4F4F2; --sand:#F1EEEA; --line:#E4E4E0;
@@ -35,6 +41,7 @@ a{color:inherit}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;border-radius:999px;background:var(--ink);color:#F4F4F3;text-decoration:none;font-weight:500;font-size:16px;border:0;cursor:pointer;transition:transform .2s ease, opacity .2s ease}
 .btn:hover{transform:translateY(-1px);opacity:.9}
 .btn.light{background:#FFFFFF;color:var(--ink)}
+.doc-quote{margin:24px 0 0;padding:0 0 0 18px;border-left:2px solid var(--line)}.doc-quote p{margin:0 0 8px;font-family:var(--serif);font-size:19px;line-height:1.45;color:var(--ink)}.doc-quote footer{font-size:14px;color:var(--muted)}
 .btn[onclick*="openContactModal"],.btn[onclick*="openCheckModal"]{font-weight:600;box-shadow:0 8px 22px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.08);transition:transform .2s ease,opacity .2s ease,box-shadow .2s ease}
 .btn[onclick*="openContactModal"]:hover,.btn[onclick*="openCheckModal"]:hover{box-shadow:0 12px 30px rgba(0,0,0,.24),0 3px 8px rgba(0,0,0,.1)}
 .h2{margin:0;font-weight:500;font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.04;letter-spacing:-0.02em;text-wrap:balance}
@@ -393,8 +400,8 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 <a href="#start" onclick="closeMenu()">Startseite</a>
 <a href="#topics" onclick="closeMenu()">Begleitung</a>
 <a href="#kennzahlen" onclick="closeMenu()">Kennzahlen</a>
-<a href="#team" onclick="closeMenu()">Team</a>
-<a href="kurz-check.html" onclick="closeMenu()">Kurz-Check</a>
+<a href="#team" onclick="closeMenu()">Medizinischer Partner</a>
+<a href="/kurz-check" onclick="closeMenu(); openCheckModal(); return false;">Kurz-Check</a>
 <a href="impressum.html" onclick="closeMenu()">Impressum</a>
 <a href="datenschutz.html" onclick="closeMenu()">Datenschutz</a>
 </div>
@@ -420,10 +427,10 @@ Your browser does not support the video tag.
 </section>
 
 <div class="calm">
-<section class="topics">
+<section class="topics" id="topics">
 <div class="wrap center">
 <h2 class="h2">Begleitung, aufgebaut <span class="soft">um deinen Alltag.</span></h2>
-<p class="lead">Von Schlaf bis Kraft, vom Geschäftsessen bis zum Reisetag. Egal, wo du startest: Wir setzen dort an, wo dein größter Hebel liegt.</p>
+<p class="lead">Von Schlaf bis Kraft, vom Geschäftsessen bis zum Reisetag. Egal, wo du startest: Ich setze dort an, wo dein größter Hebel liegt.</p>
 <a class="btn" href="#" onclick="openContactModal(); return false;">Jetzt starten</a>
 </div>
 <div class="chips"><div class="chip-row"><div class="chip-track"><span class="chip"><img src="images/lifestyle-bilder/1_schlaf.jpg" alt="" loading="lazy"><span>Schlaf</span></span><span class="chip"><img src="images/lifestyle-bilder/2_erholung.jpg" alt="" loading="lazy"><span>Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/3_energie-bis-abends.jpg" alt="" loading="lazy"><span>Energie bis abends</span></span><span class="chip"><img src="images/lifestyle-bilder/4_stress.jpg" alt="" loading="lazy"><span>Stress</span></span><span class="chip"><img src="images/lifestyle-bilder/5_ruecken-und-nacken.jpg" alt="" loading="lazy"><span>Rücken und Nacken</span></span><span class="chip"><img src="images/lifestyle-bilder/1_schlaf.jpg" alt="" loading="lazy"><span>Schlaf</span></span><span class="chip"><img src="images/lifestyle-bilder/2_erholung.jpg" alt="" loading="lazy"><span>Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/3_energie-bis-abends.jpg" alt="" loading="lazy"><span>Energie bis abends</span></span><span class="chip"><img src="images/lifestyle-bilder/4_stress.jpg" alt="" loading="lazy"><span>Stress</span></span><span class="chip"><img src="images/lifestyle-bilder/5_ruecken-und-nacken.jpg" alt="" loading="lazy"><span>Rücken und Nacken</span></span><span class="chip"><img src="images/lifestyle-bilder/1_schlaf.jpg" alt="" loading="lazy"><span>Schlaf</span></span><span class="chip"><img src="images/lifestyle-bilder/2_erholung.jpg" alt="" loading="lazy"><span>Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/3_energie-bis-abends.jpg" alt="" loading="lazy"><span>Energie bis abends</span></span><span class="chip"><img src="images/lifestyle-bilder/4_stress.jpg" alt="" loading="lazy"><span>Stress</span></span><span class="chip"><img src="images/lifestyle-bilder/5_ruecken-und-nacken.jpg" alt="" loading="lazy"><span>Rücken und Nacken</span></span><span class="chip"><img src="images/lifestyle-bilder/1_schlaf.jpg" alt="" loading="lazy"><span>Schlaf</span></span><span class="chip"><img src="images/lifestyle-bilder/2_erholung.jpg" alt="" loading="lazy"><span>Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/3_energie-bis-abends.jpg" alt="" loading="lazy"><span>Energie bis abends</span></span><span class="chip"><img src="images/lifestyle-bilder/4_stress.jpg" alt="" loading="lazy"><span>Stress</span></span><span class="chip"><img src="images/lifestyle-bilder/5_ruecken-und-nacken.jpg" alt="" loading="lazy"><span>Rücken und Nacken</span></span><span class="chip"><img src="images/lifestyle-bilder/1_schlaf.jpg" alt="" loading="lazy"><span>Schlaf</span></span><span class="chip"><img src="images/lifestyle-bilder/2_erholung.jpg" alt="" loading="lazy"><span>Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/3_energie-bis-abends.jpg" alt="" loading="lazy"><span>Energie bis abends</span></span><span class="chip"><img src="images/lifestyle-bilder/4_stress.jpg" alt="" loading="lazy"><span>Stress</span></span><span class="chip"><img src="images/lifestyle-bilder/5_ruecken-und-nacken.jpg" alt="" loading="lazy"><span>Rücken und Nacken</span></span><span class="chip"><img src="images/lifestyle-bilder/1_schlaf.jpg" alt="" loading="lazy"><span>Schlaf</span></span><span class="chip"><img src="images/lifestyle-bilder/2_erholung.jpg" alt="" loading="lazy"><span>Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/3_energie-bis-abends.jpg" alt="" loading="lazy"><span>Energie bis abends</span></span><span class="chip"><img src="images/lifestyle-bilder/4_stress.jpg" alt="" loading="lazy"><span>Stress</span></span><span class="chip"><img src="images/lifestyle-bilder/5_ruecken-und-nacken.jpg" alt="" loading="lazy"><span>Rücken und Nacken</span></span></div></div><div class="chip-row rev"><div class="chip-track"><span class="chip"><img src="images/lifestyle-bilder/6_mobilitaet.jpg" alt="" loading="lazy"><span>Mobilität</span></span><span class="chip"><img src="images/lifestyle-bilder/7_koerperfett-und-taille.jpg" alt="" loading="lazy"><span>Körperfett und Taille</span></span><span class="chip"><img src="images/lifestyle-bilder/8_kraft.jpg" alt="" loading="lazy"><span>Kraft</span></span><span class="chip"><img src="images/lifestyle-bilder/9_ausdauer.jpg" alt="" loading="lazy"><span>Ausdauer</span></span><span class="chip"><img src="images/lifestyle-bilder/10_training-mit-wenig-zeit.jpg" alt="" loading="lazy"><span>Training mit wenig Zeit</span></span><span class="chip"><img src="images/lifestyle-bilder/6_mobilitaet.jpg" alt="" loading="lazy"><span>Mobilität</span></span><span class="chip"><img src="images/lifestyle-bilder/7_koerperfett-und-taille.jpg" alt="" loading="lazy"><span>Körperfett und Taille</span></span><span class="chip"><img src="images/lifestyle-bilder/8_kraft.jpg" alt="" loading="lazy"><span>Kraft</span></span><span class="chip"><img src="images/lifestyle-bilder/9_ausdauer.jpg" alt="" loading="lazy"><span>Ausdauer</span></span><span class="chip"><img src="images/lifestyle-bilder/10_training-mit-wenig-zeit.jpg" alt="" loading="lazy"><span>Training mit wenig Zeit</span></span><span class="chip"><img src="images/lifestyle-bilder/6_mobilitaet.jpg" alt="" loading="lazy"><span>Mobilität</span></span><span class="chip"><img src="images/lifestyle-bilder/7_koerperfett-und-taille.jpg" alt="" loading="lazy"><span>Körperfett und Taille</span></span><span class="chip"><img src="images/lifestyle-bilder/8_kraft.jpg" alt="" loading="lazy"><span>Kraft</span></span><span class="chip"><img src="images/lifestyle-bilder/9_ausdauer.jpg" alt="" loading="lazy"><span>Ausdauer</span></span><span class="chip"><img src="images/lifestyle-bilder/10_training-mit-wenig-zeit.jpg" alt="" loading="lazy"><span>Training mit wenig Zeit</span></span><span class="chip"><img src="images/lifestyle-bilder/6_mobilitaet.jpg" alt="" loading="lazy"><span>Mobilität</span></span><span class="chip"><img src="images/lifestyle-bilder/7_koerperfett-und-taille.jpg" alt="" loading="lazy"><span>Körperfett und Taille</span></span><span class="chip"><img src="images/lifestyle-bilder/8_kraft.jpg" alt="" loading="lazy"><span>Kraft</span></span><span class="chip"><img src="images/lifestyle-bilder/9_ausdauer.jpg" alt="" loading="lazy"><span>Ausdauer</span></span><span class="chip"><img src="images/lifestyle-bilder/10_training-mit-wenig-zeit.jpg" alt="" loading="lazy"><span>Training mit wenig Zeit</span></span><span class="chip"><img src="images/lifestyle-bilder/6_mobilitaet.jpg" alt="" loading="lazy"><span>Mobilität</span></span><span class="chip"><img src="images/lifestyle-bilder/7_koerperfett-und-taille.jpg" alt="" loading="lazy"><span>Körperfett und Taille</span></span><span class="chip"><img src="images/lifestyle-bilder/8_kraft.jpg" alt="" loading="lazy"><span>Kraft</span></span><span class="chip"><img src="images/lifestyle-bilder/9_ausdauer.jpg" alt="" loading="lazy"><span>Ausdauer</span></span><span class="chip"><img src="images/lifestyle-bilder/10_training-mit-wenig-zeit.jpg" alt="" loading="lazy"><span>Training mit wenig Zeit</span></span><span class="chip"><img src="images/lifestyle-bilder/6_mobilitaet.jpg" alt="" loading="lazy"><span>Mobilität</span></span><span class="chip"><img src="images/lifestyle-bilder/7_koerperfett-und-taille.jpg" alt="" loading="lazy"><span>Körperfett und Taille</span></span><span class="chip"><img src="images/lifestyle-bilder/8_kraft.jpg" alt="" loading="lazy"><span>Kraft</span></span><span class="chip"><img src="images/lifestyle-bilder/9_ausdauer.jpg" alt="" loading="lazy"><span>Ausdauer</span></span><span class="chip"><img src="images/lifestyle-bilder/10_training-mit-wenig-zeit.jpg" alt="" loading="lazy"><span>Training mit wenig Zeit</span></span></div></div><div class="chip-row"><div class="chip-track"><span class="chip"><img src="images/lifestyle-bilder/11_ernaehrung-im-alltag.jpg" alt="" loading="lazy"><span>Ernährung im Alltag</span></span><span class="chip"><img src="images/lifestyle-bilder/12_geschaeftsessen.jpg" alt="" loading="lazy"><span>Geschäftsessen</span></span><span class="chip"><img src="images/lifestyle-bilder/13_reisetage.jpg" alt="" loading="lazy"><span>Reisetage</span></span><span class="chip"><img src="images/lifestyle-bilder/14_alkohol-und-erholung.jpg" alt="" loading="lazy"><span>Alkohol und Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/15_in-20-jahren-noch-fit.jpg" alt="" loading="lazy"><span>In 20 Jahren noch fit</span></span><span class="chip"><img src="images/lifestyle-bilder/11_ernaehrung-im-alltag.jpg" alt="" loading="lazy"><span>Ernährung im Alltag</span></span><span class="chip"><img src="images/lifestyle-bilder/12_geschaeftsessen.jpg" alt="" loading="lazy"><span>Geschäftsessen</span></span><span class="chip"><img src="images/lifestyle-bilder/13_reisetage.jpg" alt="" loading="lazy"><span>Reisetage</span></span><span class="chip"><img src="images/lifestyle-bilder/14_alkohol-und-erholung.jpg" alt="" loading="lazy"><span>Alkohol und Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/15_in-20-jahren-noch-fit.jpg" alt="" loading="lazy"><span>In 20 Jahren noch fit</span></span><span class="chip"><img src="images/lifestyle-bilder/11_ernaehrung-im-alltag.jpg" alt="" loading="lazy"><span>Ernährung im Alltag</span></span><span class="chip"><img src="images/lifestyle-bilder/12_geschaeftsessen.jpg" alt="" loading="lazy"><span>Geschäftsessen</span></span><span class="chip"><img src="images/lifestyle-bilder/13_reisetage.jpg" alt="" loading="lazy"><span>Reisetage</span></span><span class="chip"><img src="images/lifestyle-bilder/14_alkohol-und-erholung.jpg" alt="" loading="lazy"><span>Alkohol und Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/15_in-20-jahren-noch-fit.jpg" alt="" loading="lazy"><span>In 20 Jahren noch fit</span></span><span class="chip"><img src="images/lifestyle-bilder/11_ernaehrung-im-alltag.jpg" alt="" loading="lazy"><span>Ernährung im Alltag</span></span><span class="chip"><img src="images/lifestyle-bilder/12_geschaeftsessen.jpg" alt="" loading="lazy"><span>Geschäftsessen</span></span><span class="chip"><img src="images/lifestyle-bilder/13_reisetage.jpg" alt="" loading="lazy"><span>Reisetage</span></span><span class="chip"><img src="images/lifestyle-bilder/14_alkohol-und-erholung.jpg" alt="" loading="lazy"><span>Alkohol und Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/15_in-20-jahren-noch-fit.jpg" alt="" loading="lazy"><span>In 20 Jahren noch fit</span></span><span class="chip"><img src="images/lifestyle-bilder/11_ernaehrung-im-alltag.jpg" alt="" loading="lazy"><span>Ernährung im Alltag</span></span><span class="chip"><img src="images/lifestyle-bilder/12_geschaeftsessen.jpg" alt="" loading="lazy"><span>Geschäftsessen</span></span><span class="chip"><img src="images/lifestyle-bilder/13_reisetage.jpg" alt="" loading="lazy"><span>Reisetage</span></span><span class="chip"><img src="images/lifestyle-bilder/14_alkohol-und-erholung.jpg" alt="" loading="lazy"><span>Alkohol und Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/15_in-20-jahren-noch-fit.jpg" alt="" loading="lazy"><span>In 20 Jahren noch fit</span></span><span class="chip"><img src="images/lifestyle-bilder/11_ernaehrung-im-alltag.jpg" alt="" loading="lazy"><span>Ernährung im Alltag</span></span><span class="chip"><img src="images/lifestyle-bilder/12_geschaeftsessen.jpg" alt="" loading="lazy"><span>Geschäftsessen</span></span><span class="chip"><img src="images/lifestyle-bilder/13_reisetage.jpg" alt="" loading="lazy"><span>Reisetage</span></span><span class="chip"><img src="images/lifestyle-bilder/14_alkohol-und-erholung.jpg" alt="" loading="lazy"><span>Alkohol und Erholung</span></span><span class="chip"><img src="images/lifestyle-bilder/15_in-20-jahren-noch-fit.jpg" alt="" loading="lazy"><span>In 20 Jahren noch fit</span></span></div></div></div>
@@ -436,7 +443,7 @@ Your browser does not support the video tag.
 </div>
 <div class="founder-copy">
 <h2>Timo Breimeier<span class="subtitle">Gründer & Gesundheits-Sparringspartner</span></h2>
-<p>Seit über 5 Jahren begleite ich Unternehmer zu mehr Leistung und besserer Gesundheit. Ich arbeite mit echten Daten und bewährten Methoden. Keine Trends, keine Supplements die du nicht brauchst. Nur das, was funktioniert.</p>
+<p>Ich begleite Unternehmer zu mehr Leistung und besserer Gesundheit. Ich arbeite mit echten Daten und bewährten Methoden. Keine Trends, keine Supplements die du nicht brauchst. Nur das, was funktioniert.</p>
 <p>Jede Woche schaue ich mir deine Daten an. Jedes Quartal sitzen wir zusammen am Tisch. Das delegiere ich nicht. Das mache ich selbst.</p>
 <div class="founder-quals">
 <span>Diplom Sport und Gesundheit</span>
@@ -457,7 +464,7 @@ Your browser does not support the video tag.
 <div class="timeline" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="stat-grid">
 <div><strong>3</strong><span>Quartalsziele, jedes mit einer Kennzahl für Start und Ziel</span></div>
-<div><strong>52</strong><span>Wochenberichte im Jahr, jeden Montag bis 12 Uhr</span></div>
+<div><strong>52</strong><span>Wochenberichte im Jahr, einer jede Woche</span></div>
 <div><strong>4</strong><span>Beiratssitzungen im Jahr, jeweils drei Stunden persönlich</span></div>
 </div>
 </div>
@@ -479,7 +486,7 @@ Your browser does not support the video tag.
 <p>Ärztlicher Check-up mit Blutwerten, 14 Tage WHOOP-Daten, Messungen und Bewegungs-Check. Drei Stunden persönlich in Woche 3.</p>
 </div>
 <div class="stack-media">
-<img src="https://d8j0ntlcm91z4.cloudfront.net/user_3GB8bseztpitl4gRdoNA6ZpVobP/hf_20261107_124306_140e8756-78e8-4620-ad02-0158b4de71c0.jpeg" alt="" loading="lazy">
+<img src="images/sektionen/124306_140e8756-78e8-4620-ad02-0158b4de71c0.jpeg" alt="" loading="lazy">
 <div class="tint b"></div>
 <div class="const" aria-hidden="true">
 <svg viewBox="0 0 100 100" preserveAspectRatio="none"><polyline points="14,26 40,16 62,42 70,76" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1" vector-effect="non-scaling-stroke"></polyline><polyline points="14,26 28,62 62,42" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1" vector-effect="non-scaling-stroke"></polyline></svg>
@@ -499,7 +506,7 @@ Your browser does not support the video tag.
 <p>Drei Quartalsziele mit Kennzahl, Trainingsplan, Ernährungsrahmen, Zeitbudget und Plan B. Als PDF und gedruckt in deiner Mappe.</p>
 </div>
 <div class="stack-media">
-<img src="https://d8j0ntlcm91z4.cloudfront.net/user_3GB8bseztpitl4gRdoNA6ZpVobP/hf_20261107_124306_98eec71b-8dea-4cf4-9e18-67e9f8184891.jpeg" alt="" loading="lazy"><div class="tint b"></div>
+<img src="images/sektionen/124306_98eec71b-8dea-4cf4-9e18-67e9f8184891.jpeg" alt="" loading="lazy"><div class="tint b"></div>
 <div class="overlay"><div class="panel">
 <span class="k">Quartalsziel 1</span>
 <h4>Schlaf von 6,1 auf 7,0 Stunden</h4>
@@ -518,10 +525,10 @@ Your browser does not support the video tag.
 <div class="stack-copy">
 <span class="label"><i></i>Begleitung</span>
 <h3>Jede Woche jemand, der nachfragt</h3>
-<p>Im ersten Quartal: Standortbestimmung mit deinen Kennzahlen, Gesundheits-Businessplan mit Trainingsplan und Ernährungsrahmen, jede Woche Check-in und Wochenbericht, Rückmeldung nach jedem Training, jeden Monat ein persönlicher Termin, Beiratssitzung am Ende. Danach läuft die Begleitung weiter.</p>
+<p>Im ersten Quartal: Standortbestimmung mit deinen Kennzahlen, Gesundheits-Businessplan mit Trainingsplan und Ernährungsrahmen, jede Woche Check-in und Wochenbericht, jeden Monat ein persönlicher Termin, Beiratssitzung am Ende. Danach läuft die Begleitung weiter.</p>
 </div>
 <div class="stack-media">
-<img src="https://d8j0ntlcm91z4.cloudfront.net/user_3GB8bseztpitl4gRdoNA6ZpVobP/hf_20261107_124306_ef5bb60e-2bb9-4bca-a5c2-937c2b52c0be.jpeg" alt="" loading="lazy"><div class="tint a"></div>
+<img src="images/sektionen/124306_ef5bb60e-2bb9-4bca-a5c2-937c2b52c0be.jpeg" alt="" loading="lazy"><div class="tint a"></div>
 <div class="overlay"><div class="glass">
 <div style="font-size:15px">Schlaf, Durchschnitt pro Woche</div>
 <div class="big">7,1<small>Stunden</small></div>
@@ -576,7 +583,7 @@ Your browser does not support the video tag.
 </div>
 <div class="bento">
 <div class="tile">
-<img src="https://d8j0ntlcm91z4.cloudfront.net/user_3GB8bseztpitl4gRdoNA6ZpVobP/hf_20261107_124322_8b7bf1fb-0f04-420c-88fe-a8593f52da9d.jpeg" alt="" loading="lazy"><div class="tint b"></div>
+<img src="images/sektionen/124322_8b7bf1fb-0f04-420c-88fe-a8593f52da9d.jpeg" alt="" loading="lazy"><div class="tint b"></div>
 <div class="center-box"><div class="ring"><div class="n">61 %</div><div class="t">Recovery diese Woche</div><div class="s">Vorwoche 54 %</div></div></div>
 <div class="cap">Wissen, wo dein Körper steht</div>
 </div>
@@ -588,7 +595,7 @@ Your browser does not support the video tag.
 <div class="cap">Kennzahlen im Verlauf</div>
 </div>
 <div class="tile">
-<img src="https://d8j0ntlcm91z4.cloudfront.net/user_3GB8bseztpitl4gRdoNA6ZpVobP/hf_20261107_124322_fce5d027-4830-4a76-9bbf-2197528b744a.jpeg" alt="" loading="lazy"><div class="tint m"></div>
+<img src="images/sektionen/124322_fce5d027-4830-4a76-9bbf-2197528b744a.jpeg" alt="" loading="lazy"><div class="tint m"></div>
 <div class="center-box"><div class="list-card">
 <div><img src="images/lifestyle-bilder/1_schlaf.jpg" alt=""><span><b>Feste Schlafenszeit</b><span>Experiment, Woche 4 bis 7</span></span></div>
 <div><img src="images/lifestyle-bilder/11_ernaehrung-im-alltag.jpg" alt=""><span><b>Ernährungsrahmen mittags</b><span>5 Tage pro Woche</span></span></div>
@@ -597,12 +604,12 @@ Your browser does not support the video tag.
 <div class="cap">Ein Plan, der in deinen Kalender passt</div>
 </div>
 <div class="tile">
-<img src="https://d8j0ntlcm91z4.cloudfront.net/user_3GB8bseztpitl4gRdoNA6ZpVobP/hf_20261107_124321_bb4aa154-32ee-4ffa-a4c5-6ba55a4e98d0.jpeg" alt="" loading="lazy"><div class="tint a"></div>
+<img src="images/sektionen/124321_bb4aa154-32ee-4ffa-a4c5-6ba55a4e98d0.jpeg" alt="" loading="lazy"><div class="tint a"></div>
 <div class="center-box"><div class="ask">Nächste Woche bin ich drei Tage in Hamburg. Was mache ich im Hotel?<small>Antwort am selben Werktag</small></div></div>
 <div class="cap">Schreib mir, wann du willst</div>
 </div>
 <div class="tile wide">
-<img src="https://d8j0ntlcm91z4.cloudfront.net/user_3GB8bseztpitl4gRdoNA6ZpVobP/hf_20261107_124335_c54689ec-6068-4bff-8746-915dae6b5640.jpeg" alt="" loading="lazy"><div class="tint b"></div>
+<img src="images/sektionen/124335_c54689ec-6068-4bff-8746-915dae6b5640.jpeg" alt="" loading="lazy"><div class="tint b"></div>
 <div class="center-box"><div class="wtiles">
 <div><div class="k">SCHLAF Ø</div><div class="v">6,6 h</div><div class="s">Ziel 7,0 h</div></div>
 <div><div class="k">HRV Ø</div><div class="v">48 ms</div><div class="s">30 Tage 46 ms</div></div>
@@ -633,10 +640,9 @@ Your browser does not support the video tag.
 <div class="wrap">
 <div class="team-head">
 <div class="left">
-<h2 class="h2">Unser exklusives <span class="soft">Ärzte Team.</span></h2>
-<p class="lead">Bei medizinischen Fragen arbeite ich mit hochspezialisierten Fachleuten zusammen. Für dich ist das im Paket inklusive.</p>
+<h2 class="h2">Medizinisch <span class="soft">im Rücken.</span></h2>
+<p class="lead">Bei orthopädischen Fragen arbeite ich mit OA Dr. Johannes Sailer zusammen. Seine Online-Fachabende sind für dich inklusive.</p>
 </div>
-<div class="arrows"><button type="button" aria-label="Zurück">‹</button><button type="button" aria-label="Weiter">›</button></div>
 </div>
 <div class="team-grid">
 <div class="person" onclick="showTeamProfile('sailer')" style="cursor:pointer;transition:all 0.3s ease"><img class="ph" src="images/dr-sailer.jpg" alt="OA Dr. Johannes Sailer - Medizinischer Partner"><span><b>OA Dr. Johannes Sailer</b><span>Medizinischer Partner, Orthopädie</span></span></div>
@@ -653,6 +659,7 @@ Your browser does not support the video tag.
 <li><b>Datenschutz</b>Fälle bespreche ich mit ihm nur anonymisiert. Mit Namen nur mit deiner schriftlichen Einwilligung.</li>
 <li><b>Unabhängig</b>Für Empfehlungen fließt in keine Richtung Geld. Diagnose und Behandlung bleiben beim Arzt.</li>
 </ul>
+<blockquote class="doc-quote" data-config="sailerZitat" hidden><p>„Ich berate Timo im Hintergrund bei orthopädischen Fragen und komplizierten Fällen. Diagnose und Behandlung bleiben dabei immer beim Arzt.“</p><footer>OA Dr. Johannes Sailer, Facharzt für Orthopädie</footer></blockquote>
 </div>
 </article>
 </div>
@@ -667,24 +674,20 @@ Your browser does not support the video tag.
 </div>
 <div class="wrap">
 <div class="app-media">
-<img src="https://d8j0ntlcm91z4.cloudfront.net/user_3GB8bseztpitl4gRdoNA6ZpVobP/hf_20261107_124412_6b699f1a-395e-4e99-a0d8-9f3b7e71f76c.jpeg" alt="" loading="lazy"><div class="tint b"></div>
+<img src="images/sektionen/124412_6b699f1a-395e-4e99-a0d8-9f3b7e71f76c.jpeg" alt="" loading="lazy"><div class="tint b"></div>
 <div class="phone"><img class="device" src="handy2_transparent_1520x2688.png" alt="" loading="lazy"><span class="cam" aria-hidden="true"></span><div class="screen">
 <div class="bar" aria-hidden="true"><span>8:15</span><span>5G</span></div>
 <div class="top"><b>Timo Breimeier · ARISTEIA</b></div>
 <div class="msgs">
-<span class="day">Montag</span>
 <div class="in">Dein Wochenbericht für KW 2.<span class="file">Wochenbericht KW 2 · PDF · 1 Seite</span></div>
 <div class="in">Sprachnachricht · 1:12</div>
 <div class="out">Danke. Mittwoch 7 Uhr passt mir.</div>
-<span class="day">Mittwoch</span>
-<div class="out">Studio 1 erledigt.</div>
-<div class="in">Sauber. Morgen locker bewegen, deine Recovery liegt bei 41 %.</div>
 <span class="day">Sonntag, 18 Uhr</span>
 <div class="in">Check-in: Energie, Stress, Trainings, Gewicht. Zwei Minuten.</div>
 </div>
 </div></div>
 <div class="float f1"><b>Recovery 61 %</b><span>Vorwoche 54 %</span></div>
-<div class="float f2"><b>Wochenbericht KW 2</b><span>PDF · 1 Seite · Montag 11:40</span></div>
+<div class="float f2"><b>Wochenbericht KW 2</b><span>PDF · 1 Seite</span></div>
 <div class="float f3"><b>Beiratssitzung Q1</b><span>Donnerstag, 12. März · 3 Std.</span></div>
 </div>
 <div class="tools"><span>WhatsApp Business</span><span>WHOOP-App</span></div>
@@ -705,13 +708,13 @@ Your browser does not support the video tag.
 </div>
 <div>
 <div class="cols">
-<div><b>Begleitung</b><a href="kurz-check.html">Erstgespräch</a><a href="#ablauf">Standortbestimmung</a><a href="#ablauf">Gesundheits-Businessplan</a><a href="#ablauf">Beiratssitzung</a><a href="#pakete">Pakete</a></div>
-<div><b>ARISTEIA</b><a href="#team">Über mich</a><a href="#team">Medizinischer Partner</a><a href="#kennzahlen">Kennzahlen</a><a href="kurz-check.html">Am Bodensee</a></div>
+<div><b>Begleitung</b><a href="#erstgespraech" onclick="openContactModal(); return false;">Erstgespräch</a><a href="#ablauf">Standortbestimmung</a><a href="#ablauf">Gesundheits-Businessplan</a><a href="#ablauf">Beiratssitzung</a></div>
+<div><b>ARISTEIA</b><a href="#team">Über mich</a><a href="#team">Medizinischer Partner</a><a href="#kennzahlen">Kennzahlen</a><a href="#erstgespraech">Am Bodensee</a></div>
 <div><b>Kontakt</b><a href="mailto:timo@aristeiaconsulting.de">timo@aristeiaconsulting.de</a><a href="https://www.instagram.com/aristeiaconsulting.de/" target="_blank">Instagram</a><a href="https://www.linkedin.com/in/timobreimeier" target="_blank">LinkedIn</a><a href="#faq">Fragen und Antworten</a></div>
 </div>
-<div class="news">
+<div class="news" data-config="newsletter" hidden>
 <label for="mail">Melde dich an <span>für einen Impuls im Monat zu Schlaf, Training und Kennzahlen.</span></label>
-<form action="#newsletter"><input id="mail" type="email" placeholder="E-Mail-Adresse"><button class="btn light" type="submit">Anmelden</button></form>
+<form action="#" method="post" onsubmit="return false"><input id="mail" type="email" placeholder="E-Mail-Adresse"><button class="btn light" type="submit">Anmelden</button></form>
 <small>Mit Double-Opt-in, Abmeldung jederzeit.</small>
 </div>
 </div>
@@ -771,7 +774,7 @@ html{scroll-behavior:auto}
 .btn:hover .arr{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.rv,.hw,.hero-copy p,.hero-copy .btn,.hero-facts,.msgs > *,.stat-grid > div{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}.hero-media img,.hero-media video,.float,.ld{animation:none}}
 </style>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="/js/lenis.min.js"></script>
 <script>
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -896,6 +899,7 @@ document.addEventListener('DOMContentLoaded',function(){const arrows=document.qu
 
 window.openCheckModal=function(){window.checkStep=0;const m=document.getElementById('modal');m.classList.remove('hidden');m.style.display='flex';m.style.position='fixed';m.style.inset='0';m.style.zIndex='200';m.style.opacity='0';m.innerHTML=`<div style="position:fixed;inset:0;background:rgba(0,0,0,0.3);backdrop-filter:blur(10px);z-index:200"></div><div style="position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:201;width:100%;max-width:420px;padding:20px"><div style="background:white;border-radius:20px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,0.1);text-align:center"><button onclick="closeModal()" style="position:absolute;top:20px;right:20px;background:0;border:0;font-size:28px;cursor:pointer;color:#999;padding:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center">×</button><div style="margin-bottom:30px"><div id="q-counter" style="font-size:13px;color:#999;margin-bottom:10px"></div><div style="height:4px;background:#f0f0f0;border-radius:2px;overflow:hidden"><div id="progress" style="height:100%;background:#000;width:0%;transition:width 0.3s"></div></div></div><div id="question-container" style="margin-bottom:30px;min-height:100px;display:flex;flex-direction:column;justify-content:center"><h2 id="q-title" style="margin:0 0 20px;font-size:28px;font-weight:600;line-height:1.2"></h2><div id="q-options" style="display:flex;flex-direction:column;gap:10px"></div></div><div style="display:flex;gap:12px"><button onclick="prevQuestion()" style="flex:1;padding:12px;background:#f0f0f0;border:0;border-radius:12px;font-weight:500;cursor:pointer;color:#000">Zurück</button><button onclick="nextQuestion()" style="flex:1;padding:12px;background:#000;border:0;border-radius:12px;font-weight:600;cursor:pointer;color:white">Weiter</button></div></div></div>`;setTimeout(()=>document.getElementById('modal').style.opacity='1',10);window.renderQuestion()};
 window.checkAnswers={};
+document.addEventListener('DOMContentLoaded',function(){if(location.pathname.replace(/\/+$/,'')==='/kurz-check')openCheckModal()});
 window.questions=[{q:"Was beschreibt dich am besten?",opts:["Unternehmer/in oder Gründer/in","Geschäftsführer/in oder Vorstand","Führungskraft","Selbstständig mit eigener Praxis, Kanzlei oder eigenem Büro","Etwas anderes"]},{q:"Wie viel Energie hast du an einem normalen Arbeitstag um 15 Uhr noch?",opts:["Volle Leistung","Gut, aber nicht mehr ganz frisch","Es braucht Kaffee oder etwas Süßes","Ziemlich wenig"]},{q:"Wie erholt startest du in den Tag?",opts:["Fast immer ausgeruht","Meistens","Eher selten","Kaum"]},{q:"Wie sieht Bewegung bei dir gerade aus?",opts:["Regelmäßig, aber ohne klaren Plan","Mal mehr, mal weniger, es fehlt die Regelmäßigkeit","Viel und intensiv, die Erholung kommt manchmal zu kurz","Gerade wenig, ich suche den richtigen Einstieg"],persona:["STRUKTUR","STRUKTUR","ERHOLUNG","EINSTIEG"]},{q:"Was würde dir am meisten helfen?",opts:["Ein Plan, der in meinen vollen Kalender passt","Klarheit, was ich konkret tun soll","Jemand, der dranbleibt und nachhakt","Eine Lösung für Reisen und unregelmäßige Tage","Messbar sehen, dass es wirkt"]},{q:"Was soll in den nächsten 12 Monaten anders sein?",opts:["Mehr Energie im Arbeitstag","Fitter und stärker werden","Gewicht oder Körperfett verändern","Besser schlafen und abschalten","Gesundheit langfristig absichern"]},{q:"Wann möchtest du starten?",opts:["Sofort","In den nächsten 4 Wochen","In den nächsten 3 Monaten","Ich informiere mich erst einmal"]},{q:"Deine Kontaktdaten",opts:[],special:"email"}];
 window.renderQuestion=function(){const q=window.questions[window.checkStep],n=window.questions.length;document.getElementById('q-counter').textContent=q.special?'Fast geschafft':`Frage ${window.checkStep+1} von ${n-1}`;document.getElementById('progress').style.width=(window.checkStep/n)*100+'%';if(!q.special){document.getElementById('q-title').textContent=q.q;const html=q.opts.map((o,i)=>`<button onclick="selectAnswer(${i})" style="padding:14px;background:${window.checkAnswers[window.checkStep]===o?'#000':'#f5f5f5'};color:${window.checkAnswers[window.checkStep]===o?'white':'#000'};border:0;border-radius:12px;cursor:pointer;font-weight:500;transition:all 0.2s">${o}</button>`).join('');document.getElementById('q-options').innerHTML=html}else{document.getElementById('q-title').textContent=q.q;document.getElementById('q-options').innerHTML=`<input type="email" id="email-input" placeholder="deine@email.de" style="padding:14px;border:1px solid #e0e0e0;border-radius:12px;font-size:16px;text-align:center"><input type="text" id="name-input" placeholder="Dein Name" style="padding:14px;border:1px solid #e0e0e0;border-radius:12px;font-size:16px;margin-top:10px;text-align:center"><input type="tel" id="phone-input" placeholder="Dein Telefon" style="padding:14px;border:1px solid #e0e0e0;border-radius:12px;font-size:16px;margin-top:10px;text-align:center"><label style="display:flex;gap:10px;align-items:flex-start;margin-top:14px;text-align:left;font-size:12px;line-height:1.5;color:#666;cursor:pointer"><input type="checkbox" id="consent-input" style="margin-top:3px;flex-shrink:0"><span>Meine Antworten aus dem Kurz-Check dürfen zur Vorbereitung des Erstgesprächs genutzt werden. Ich kann das jederzeit widerrufen. Mehr dazu in der <a href="datenschutz.html" target="_blank" style="color:#666;text-decoration:underline">Datenschutzerklärung</a>.</span></label>`}};
 window.selectAnswer=function(i){window.checkAnswers[window.checkStep]=window.questions[window.checkStep].opts[i];window.renderQuestion()};
