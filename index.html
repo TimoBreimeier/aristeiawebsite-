@@ -1370,6 +1370,7 @@ window.RESULT_TEXTS={EINSTIEG:'Dir fehlt nicht der Wille, sondern ein Einstieg, 
 </div>
 
 <script>
+(function(){var v=document.querySelector('.hero-video');if(!v)return;var go=function(){if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}};go();['touchend','click'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true})})})();
 window.toggleMenu=function(){document.getElementById('dropdownMenu').classList.toggle('open')};
 window.closeMenu=function(){document.getElementById('dropdownMenu').classList.remove('open')};
 </script>
