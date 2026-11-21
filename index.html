@@ -1027,6 +1027,16 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 .dlg-legal{margin:14px 0 0;font-size:12px;line-height:1.45;color:var(--soft)}
 .dlg-legal a{color:inherit}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media (max-width:860px){
+.stack,.bento{flex-direction:row;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.stack::-webkit-scrollbar,.bento::-webkit-scrollbar{display:none}
+.stack{margin-top:56px;gap:12px;padding:0 24px 4px;scroll-padding:0 24px}
+.stack-card{flex:0 0 86%;scroll-snap-align:start;transform:none!important;filter:none!important}
+.stack-media{min-height:380px}
+.bento{display:flex;gap:12px;margin:40px -24px 0;padding:0 24px 4px;scroll-padding:0 24px}
+.tile{flex:0 0 86%;scroll-snap-align:start}
+}
+
 .faq{padding:110px 0 0}
 .faq .wrap{max-width:860px}
 .faq .h2{text-align:center}
@@ -1147,7 +1157,9 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
         if (st) { st.classList.toggle('on', on); if (on && !st._c) { st._c = 1; countUp(st.querySelector('strong')); } }
       });
     }
+    var narrow = window.innerWidth <= 860;
     cards.forEach(function(c, i){
+      if (narrow) { c.style.transform = ''; c.style.filter = ''; return; }
       var next = cards[i + 1]; if (!next) return;
       var a = c.getBoundingClientRect(), b = next.getBoundingClientRect(), d = b.top - a.top, p3 = clamp(1 - (d - 16) / (a.height - 16), 0, 1);
       c.style.transform = 'scale(' + (1 - p3 * 0.05).toFixed(4) + ')';
@@ -1274,7 +1286,7 @@ window.RESULT_TEXTS={EINSTIEG:'Dir fehlt nicht der Wille, sondern ein Einstieg, 
 })();
 </script>
 
-<div class="dlg" id="checkDialog" hidden>
+<div class="dlg" id="checkDialog" hidden data-lenis-prevent>
 <div class="dlg-panel" id="checkPanel" role="dialog" aria-modal="true" aria-labelledby="q-title" tabindex="-1">
 <button type="button" class="dlg-x" onclick="closeDialog()" aria-label="Schließen">×</button>
 <div id="check-steps">
@@ -1295,7 +1307,7 @@ window.RESULT_TEXTS={EINSTIEG:'Dir fehlt nicht der Wille, sondern ein Einstieg, 
 </div>
 </div>
 
-<div class="dlg" id="contactDialog" hidden>
+<div class="dlg" id="contactDialog" hidden data-lenis-prevent>
 <div class="dlg-panel" role="dialog" aria-modal="true" aria-labelledby="c-title" tabindex="-1">
 <button type="button" class="dlg-x" onclick="closeDialog()" aria-label="Schließen">×</button>
 <div id="c-formwrap">
