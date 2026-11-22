@@ -30,7 +30,7 @@ async function sendEmailWithFallback(to, subject, html, replyTo) {
     return await resend.emails.send({
       from: process.env.CONTACT_FROM || 'noreply@aristeiaconsulting.de',
       to,
-      replyTo,
+      reply_to: replyTo,
       subject,
       html
     });
