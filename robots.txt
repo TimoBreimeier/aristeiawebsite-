@@ -12,4 +12,4 @@ User-agent: Google-Extended
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://aristeiawebsite.vercel.app/sitemap.xml
+Sitemap: https://www.aristeiaconsulting.de/sitemap.xml

@@ -36,8 +36,8 @@
 
 ## Links
 
-- [Startseite](https://aristeiawebsite.vercel.app/)
-- [Kurz-Check, sieben Fragen](https://aristeiawebsite.vercel.app/kurz-check)
-- [Impressum](https://aristeiawebsite.vercel.app/impressum)
-- [Datenschutz](https://aristeiawebsite.vercel.app/datenschutz)
+- [Startseite](https://www.aristeiaconsulting.de/)
+- [Kurz-Check, sieben Fragen](https://www.aristeiaconsulting.de/kurz-check)
+- [Impressum](https://www.aristeiaconsulting.de/impressum)
+- [Datenschutz](https://www.aristeiaconsulting.de/datenschutz)
 - Kontakt: timo@aristeiaconsulting.de
