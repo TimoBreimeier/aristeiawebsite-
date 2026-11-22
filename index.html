@@ -1009,6 +1009,12 @@ html{scroll-behavior:auto}
 .btn:hover .arr{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.rv,.hw,.hero-copy p,.hero-copy .btn,.hero-facts,.msgs > *,.stat-grid > div{opacity:1!important;transform:none!important;filter:none!important;animation:none!important}.hero-media img,.hero-media video,.float,.ld{animation:none}}
 /* CTA + Dialoge + FAQ */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.panel,.glass,.bubble,.list-card,.ask,.float,.ring,.wtiles{transition:translate .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.const .tg{transition:opacity .6s ease,translate .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease}
+.panel:hover,.glass:hover,.bubble:hover,.list-card:hover,.ask:hover,.float:hover,.ring:hover,.wtiles:hover{translate:0 -6px;box-shadow:0 22px 48px rgba(14,20,32,.22)}
+.const .tg:hover{translate:0 -3px;box-shadow:0 10px 24px rgba(14,20,32,.2)}
+}
 @media (min-width:768px){.founder-quals{display:block;columns:2;column-gap:28px}.founder-quals span{align-items:flex-start;break-inside:avoid;margin-bottom:14px}.founder-quals span:nth-child(6){break-before:column}}
 button,input,textarea,select{font-family:inherit}
 .nav .menu-toggle{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
