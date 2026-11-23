@@ -631,6 +631,10 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 .qp-bar{height:4px;margin-top:10px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
 .qp-bar i{display:block;width:28.6%;height:100%;border-radius:4px;background:#FFFFFF}
 @media (max-width:860px){.check-preview{padding:32px 20px}.qp-q{font-size:17px}}
+/* Hero: Leitsatz über der Überschrift */
+.hero-copy p.hero-kicker{display:inline-flex;align-items:center;gap:10px;max-width:none;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.92);animation-delay:.15s}
+.hero-kicker i{width:12px;height:12px;flex:none;background:#FFFFFF;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 88 88'%3E%3Cpath d='M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 88 88'%3E%3Cpath d='M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z'/%3E%3C/svg%3E") center/contain no-repeat}
+@media (max-width:600px){.hero-copy p.hero-kicker{display:block;font-size:11px;letter-spacing:.1em;line-height:1.6;text-wrap:balance;max-width:30ch}.hero-kicker i{display:inline-block;width:10px;height:10px;margin-right:8px;vertical-align:-1px}}
 </style>
 </head>
 <body>
@@ -657,6 +661,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 </video>
 <div class="shade"></div>
 <div class="hero-copy">
+<p class="hero-kicker"><i aria-hidden="true"></i>Die Unternehmensberatung für deine Gesundheit</p>
 <h1>Du führst dein Unternehmen mit Zahlen. Jetzt auch deine Leistung.</h1>
 <div class="cta"><a class="btn light" href="#" onclick="openContactModal(); return false;">Erstgespräch vereinbaren</a><span class="cta-note">30 Minuten, per Video, kostenlos.</span></div>
 </div>
@@ -1430,23 +1435,4 @@ window.RESULT_TEXTS={EINSTIEG:'Dir fehlt nicht der Wille, sondern ein Einstieg, 
 <label class="chk" id="c-consent-wrap" hidden><input type="checkbox" id="c-consent"><span>Meine Antworten aus dem Kurz-Check dürfen zur Vorbereitung des Erstgesprächs genutzt werden. Ich kann das jederzeit widerrufen.</span></label>
 <p class="dlg-hint">Bitte keine Gesundheitsdaten eintragen. Darüber sprechen wir im Erstgespräch.</p>
 <button type="submit" class="dlg-btn full" id="c-submit">Anfrage senden</button>
-<p class="dlg-error" id="c-form-err" role="alert"></p>
-<p class="dlg-legal">Mit dem Absenden verarbeite ich deine Angaben, um deine Anfrage zu beantworten. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-</form>
-</div>
-<div id="c-success" hidden>
-<h2 class="dlg-title" id="c-success-title" tabindex="-1">Danke, deine Anfrage ist angekommen.</h2>
-<p class="dlg-text">Du bekommst gleich eine Bestätigung per E-Mail. Ich melde mich innerhalb von 24 Stunden an Werktagen bei dir.</p>
-<button type="button" class="dlg-btn full" onclick="closeDialog()">Schließen</button>
-</div>
-</div>
-</div>
-
-<script>
-(function(){var v=document.querySelector('.hero-video');if(!v)return;var go=function(){if(v.paused){var p=v.play();if(p&&p.catch)p.catch(function(){})}};go();['touchend','click'].forEach(function(e){window.addEventListener(e,go,{once:true,passive:true})})})();
-window.toggleMenu=function(){document.getElementById('dropdownMenu').classList.toggle('open')};
-window.closeMenu=function(){document.getElementById('dropdownMenu').classList.remove('open')};
-</script>
-
-</body>
-</html>
+<p
