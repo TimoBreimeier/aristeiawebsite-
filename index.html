@@ -1416,7 +1416,8 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
   var setNav = function(){ if (nav) sec.style.setProperty('--nav-h', Math.round(nav.getBoundingClientRect().bottom) + 'px'); };
   setNav(); window.addEventListener('resize', setNav, { passive: true });
 
-  var done = function(){ setTimeout(function(){ stage.classList.add('is-done'); }, 1600); };
+  var doneT = 0;
+  var done = function(){ clearTimeout(doneT); doneT = setTimeout(function(){ stage.classList.add('is-done'); }, 1600); };
   if (reduce || !('IntersectionObserver' in window)) {
     stage.classList.add('is-in', 'is-done'); if (sub) sub.classList.add('is-in');
     wraps.forEach(function(w){ w.classList.add('is-in'); });
@@ -1429,8 +1430,12 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
     ioSub.observe(sub);
   }
 
-  // Fächer beim Reinscrollen (Desktop und Tablet)
-  var ioStage = new IntersectionObserver(function(en){ if (en[0].isIntersecting) { stage.classList.add('is-in'); done(); ioStage.disconnect(); } }, { threshold: 0.25 });
+  // Fächer beim Reinscrollen (Desktop und Tablet), klappt wieder zusammen, sobald die Bühne ganz aus dem Bild ist
+  var ioStage = new IntersectionObserver(function(en){
+    var e = en[0];
+    if (e.isIntersecting && e.intersectionRatio >= 0.25) { if (!stage.classList.contains('is-in')) { stage.classList.add('is-in'); done(); } }
+    else if (!e.isIntersecting) { clearTimeout(doneT); stage.classList.remove('is-in', 'is-done'); }
+  }, { threshold: [0, 0.25] });
   ioStage.observe(stage);
 
   // Handy: jede Karte einzeln einblenden
