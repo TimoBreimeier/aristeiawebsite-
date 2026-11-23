@@ -268,9 +268,6 @@ a{color:inherit}
 .center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:22px}
 .center .lead{margin:0 auto}
 .label{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.label i{width:11px;height:11px;background:var(--ink);display:inline-block}
-.label i,.check-copy .tag i,.metric-col li.hi i{flex:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 88 88'%3E%3Cpath d='M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 88 88'%3E%3Cpath d='M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z'/%3E%3C/svg%3E") center/contain no-repeat}
-.stack-copy .label i{background:var(--blue)}
 section{position:relative}
 
 /* Navigation */
@@ -370,9 +367,8 @@ section{position:relative}
 .metric-col{height:760px;overflow:hidden;mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);display:flex;justify-content:center}
 .metric-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;animation:up 60s linear infinite;font-size:18px;color:#BDBDB8}
 .metric-col li.hi{color:#FFFFFF;font-size:30px;display:flex;align-items:center;gap:12px}
-.metric-col li.hi i{width:16px;height:16px;background:var(--amber);display:inline-block}
 .metric-col li.grp{margin-top:14px;padding-top:22px;border-top:1px solid rgba(255,255,255,.28);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#FFFFFF}
-.metric-col li.lab{color:#8C8D88}.metric-col li.lab.hi{color:#D6D6D1}.metric-col li.lab.hi i{background:var(--amber)}
+.metric-col li.lab{color:#8C8D88}.metric-col li.lab.hi{color:#D6D6D1}
 .metric-col li.lab.last{padding-bottom:22px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,.28)}
 @keyframes up{to{transform:translateY(-50%)}}
 .metrics .h2 .soft{color:#8C8D88}
@@ -419,7 +415,6 @@ section{position:relative}
 .check-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border-radius:28px;background:#F3F6F9;overflow:hidden;min-height:420px}
 .check-copy{padding:64px 56px;display:flex;flex-direction:column;gap:18px;align-items:flex-start;justify-content:center}
 .check-copy .tag{font-family:var(--mono);font-size:12px;letter-spacing:.08em;border-radius:6px;padding:5px 9px;display:inline-flex;gap:8px;align-items:center}
-.check-copy .tag i{width:9px;height:9px;background:var(--ink);display:inline-block}
 .check-copy .or{font-size:14px;color:var(--text);padding-left:26px}
 .check-media{position:relative;min-height:320px}
 .check-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -622,11 +617,9 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 @media (max-width:860px){.check-preview{padding:32px 20px}.qp-q{font-size:17px}}
 /* Hero: Leitsatz über der Überschrift */
 .hero-copy p.hero-kicker{display:inline-flex;align-items:center;gap:10px;max-width:none;font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.92);animation-delay:.15s}
-.hero-kicker i{width:12px;height:12px;flex:none;background:#FFFFFF;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 88 88'%3E%3Cpath d='M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 88 88'%3E%3Cpath d='M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z'/%3E%3C/svg%3E") center/contain no-repeat}
-@media (max-width:600px){.hero-copy p.hero-kicker{display:block;font-size:11px;letter-spacing:.1em;line-height:1.6;text-wrap:balance;max-width:30ch}.hero-kicker i{display:inline-block;width:10px;height:10px;margin-right:8px;vertical-align:-1px}}
+@media (max-width:600px){.hero-copy p.hero-kicker{display:block;font-size:11px;letter-spacing:.1em;line-height:1.6;text-wrap:balance;max-width:30ch}}
 /* Karten-Section: drei Spielkarten im Fächer */
 .karten{--u:min(1px, calc(100vw / 1440));--ease:cubic-bezier(.16,1,.3,1);--nav-h:76px;position:relative;padding-top:90px;background:transparent}
-.karten__defs{position:absolute;width:0;height:0;overflow:hidden}
 .karten::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;background:#FFFFFF;z-index:5;pointer-events:none}
 .karten__kopf{display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center;padding:0 24px}
 .karten__sub{margin:-17px 0 0;font-size:14px;line-height:20px;color:var(--ink)}
@@ -650,13 +643,9 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 .karte__feld{position:absolute;left:calc(14 * var(--u));right:calc(14 * var(--u));top:calc(112 * var(--u));bottom:calc(14 * var(--u));overflow:hidden;border-radius:calc(20 * var(--u));background:linear-gradient(150deg, rgba(255,255,255,.96), rgba(255,255,255,.86));-webkit-backdrop-filter:var(--gl-blur);backdrop-filter:var(--gl-blur);box-shadow:0 2px 6px rgba(14,32,58,.08)}
 .karte::before,.karte__feld::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(150deg,rgba(255,255,255,.55),rgba(255,255,255,.08) 36%,rgba(255,255,255,.02) 64%,rgba(255,255,255,.28));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:3}
 .karte__feld::before{background:linear-gradient(150deg,rgba(255,255,255,.95),rgba(255,255,255,.14) 36%,rgba(255,255,255,.04) 64%,rgba(255,255,255,.5))}
-.karte__stern{position:absolute;left:calc(30 * var(--u));top:calc(32 * var(--u));width:calc(20 * var(--u));height:calc(20 * var(--u));fill:#FFFFFF;opacity:.7;z-index:2}
-.karte__stern--unten{display:none}
 .karte__band{position:absolute;right:calc(30 * var(--u));top:calc(28 * var(--u));z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:calc(6 * var(--u));font-family:var(--sans);font-weight:500;font-size:calc(40 * var(--u));line-height:1;letter-spacing:-0.03em;color:#FFFFFF;white-space:nowrap;text-align:right}
 .karte__band em{font-style:normal;font-weight:400;font-family:var(--mono);font-size:calc(11.5 * var(--u));letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78)}
-.karte__band svg{display:none}
 
-.karte__band--unten{display:none}
 .karte__text{position:relative;padding:calc(30 * var(--u)) calc(28 * var(--u))}
 .karte__text h3{margin:0;font-family:var(--sans);font-weight:500;font-size:calc(30 * var(--u));line-height:1.08;letter-spacing:-0.02em;color:var(--ink)}
 .karte__text h3 em{font-style:normal;color:var(--soft)}
@@ -727,7 +716,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 </video>
 <div class="shade"></div>
 <div class="hero-copy">
-<p class="hero-kicker"><i aria-hidden="true"></i>Die Unternehmensberatung für deine Gesundheit</p>
+<p class="hero-kicker">Die Unternehmensberatung für deine Gesundheit</p>
 <h1>Du führst dein Unternehmen mit Zahlen. Jetzt auch deine Leistung.</h1>
 <div class="cta"><a class="btn light" href="#" onclick="openContactModal(); return false;">Erstgespräch vereinbaren</a><span class="cta-note">30 Minuten, per Video, kostenlos.</span></div>
 </div>
@@ -773,11 +762,6 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 </section>
 
 <section class="karten" aria-labelledby="karten-titel">
-<svg class="karten__defs" width="0" height="0" aria-hidden="true" focusable="false">
-<defs>
-<symbol id="karte-stern" viewBox="6 6 88 88"><path d="M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z"/></symbol>
-</defs>
-</svg>
 <div class="karten__kopf">
 <h2 class="h2" id="karten-titel"><span class="w">Von</span> <span class="w">deiner</span> <span class="w">Ist-Situation</span> <span class="soft"><span class="w">zu</span> <span class="w">festen</span> <span class="w">Routinen.</span></span></h2>
 <p class="karten__sub"><b>3 Quartalsziele, 52 Wochenberichte, 4 Beiratssitzungen.</b> Dein Jahr mit System.</p>
@@ -786,23 +770,18 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 
 <div class="karten__wrap karten__wrap--links">
 <article class="karte" aria-labelledby="karte-1-titel">
-<svg class="karte__stern" aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>
-<svg class="karte__stern karte__stern--unten" aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>
 <div class="karte__feld">
 <div class="karte__text">
 <h3 id="karte-1-titel">Wissen, <em>wo du stehst.</em></h3>
 <p><b>Drei Stunden, persönlich:</b> Wir sehen uns 14 Tage WHOOP-Daten an, messen und machen einen Bewegungs-Check. Dazu kommen die Empfehlungen deines Arztes. Daraus werden höchstens drei Quartalsziele, jedes mit einer Kennzahl.<br><br>Kein Vorsatz. Ein Ziel mit Zahl.</p>
 </div>
 </div>
-<span class="karte__band"><svg aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>3 <em>Quartalsziele</em><svg aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg></span>
-<span class="karte__band karte__band--unten" aria-hidden="true"><svg focusable="false"><use href="#karte-stern"/></svg>3 <em>Quartalsziele</em><svg focusable="false"><use href="#karte-stern"/></svg></span>
+<span class="karte__band">3 <em>Quartalsziele</em></span>
 </article>
 </div>
 
 <div class="karten__wrap karten__wrap--mitte">
 <article class="karte karte--bild karte--text" aria-labelledby="karte-2-titel">
-<svg class="karte__stern" aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>
-<svg class="karte__stern karte__stern--unten" aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>
 <div class="karte__feld">
 <img class="karte__foto" data-src="images/karten/timo.webp" alt="Timo Breimeier, Gründer von ARISTEIA" width="1400" height="2100" loading="lazy" decoding="async">
 <div class="karte__text">
@@ -810,23 +789,19 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 <p><b>Spätestens dienstags:</b> deine Kennzahlen gegen das Ziel, Trainings geschafft gegen geplant, eine Beobachtung und ein Fokus für die neue Woche. Dazu eine Sprachnachricht von mir.<br><br>Wie ein Controlling. Für deinen Körper.</p>
 </div>
 </div>
-<span class="karte__band"><svg aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>52 <em>Wochenberichte</em><svg aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg></span>
-<span class="karte__band karte__band--unten" aria-hidden="true"><svg focusable="false"><use href="#karte-stern"/></svg>52 <em>Wochenberichte</em><svg focusable="false"><use href="#karte-stern"/></svg></span>
+<span class="karte__band">52 <em>Wochenberichte</em></span>
 </article>
 </div>
 
 <div class="karten__wrap karten__wrap--rechts">
 <article class="karte" aria-labelledby="karte-3-titel">
-<svg class="karte__stern" aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>
-<svg class="karte__stern karte__stern--unten" aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>
 <div class="karte__feld">
 <div class="karte__text">
 <h3 id="karte-3-titel">Jedes Quartal <em>am Tisch.</em></h3>
 <p><b>Drei Stunden, persönlich:</b> Wir prüfen deine Kennzahlen gegen das Ziel, schauen auf das Quartal zurück und legen die nächsten 90 Tage fest. Im Büro, im Besprechungsraum oder als Walk am See.<br><br>Wie ein Beirat. Nur für deine Leistung.</p>
 </div>
 </div>
-<span class="karte__band"><svg aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg>4 <em>Beiratssitzungen</em><svg aria-hidden="true" focusable="false"><use href="#karte-stern"/></svg></span>
-<span class="karte__band karte__band--unten" aria-hidden="true"><svg focusable="false"><use href="#karte-stern"/></svg>4 <em>Beiratssitzungen</em><svg focusable="false"><use href="#karte-stern"/></svg></span>
+<span class="karte__band">4 <em>Beiratssitzungen</em></span>
 </article>
 </div>
 
@@ -844,7 +819,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 
 <article class="stack-card">
 <div class="stack-copy">
-<span class="label"><i></i>Standortbestimmung</span>
+<span class="label">Standortbestimmung</span>
 <h3>Wissen, wo du heute stehst</h3>
 <p>Check-up mit Blutwerten bei deinem Arzt, 14 Tage WHOOP-Daten, Messungen und Bewegungs-Check. Drei Stunden persönlich in Woche 3.</p>
 </div>
@@ -864,7 +839,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 
 <article class="stack-card">
 <div class="stack-copy">
-<span class="label"><i></i>Plan</span>
+<span class="label">Plan</span>
 <h3>Dein Gesundheits-Businessplan</h3>
 <p>Drei Quartalsziele mit Kennzahl, Trainingsplan, Ernährungsrahmen, Zeitbudget und Plan B. Als PDF und gedruckt in deiner Mappe.</p>
 </div>
@@ -886,7 +861,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 
 <article class="stack-card">
 <div class="stack-copy">
-<span class="label"><i></i>Begleitung</span>
+<span class="label">Begleitung</span>
 <h3>Jede Woche jemand, der nachfragt</h3>
 <p>Im ersten Quartal: Standortbestimmung mit deinen Kennzahlen, Gesundheits-Businessplan mit Trainingsplan und Ernährungsrahmen, jede Woche Check-in und Wochenbericht, jeden Monat ein persönlicher Termin, Beiratssitzung am Ende. Danach läuft die Begleitung weiter.</p>
 </div>
@@ -903,7 +878,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 
 <article class="stack-card">
 <div class="stack-copy">
-<span class="label"><i></i>Beirat</span>
+<span class="label">Beirat</span>
 <h3>Jedes Quartal Bilanz ziehen</h3>
 <p>Drei Stunden persönlich, im Büro, im gemieteten Raum oder als Walk-and-talk am See. Kennzahlen prüfen, neue Ziele für die nächsten 90 Tage.</p>
 </div>
@@ -928,7 +903,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 
 <section class="metrics glow g-n" id="kennzahlen">
 <div class="wrap inner">
-<div class="metric-col" aria-hidden="true"><ul><li class="hi"><i></i>Taillenumfang</li><li>Gewicht</li><li>Körperfettanteil</li><li>Griffkraft</li><li>Ruhepuls</li><li class="hi"><i></i>Schlafdauer</li><li class="hi"><i></i>Recovery</li><li>HRV</li><li>Belastung</li><li class="hi"><i></i>Trainings geschafft</li><li>Mobilität</li><li>Liegestütz</li><li>Unterarmstütz</li><li>Aufstehen vom Stuhl</li><li>Ausdauertest</li><li>Ausdauerfitness</li><li>Energie</li><li>Stress</li><li>Ernährungsrahmen</li><li>Abende mit Alkohol</li><li class="grp">Vom Arzt</li><li class="lab">Blutdruck</li><li class="lab">Blutfette</li><li class="lab">HbA1c</li><li class="lab">Leberwerte</li><li class="lab">Nierenwerte</li><li class="lab">Schilddrüse</li><li class="lab hi"><i></i>Vitamin D</li><li class="lab">Ferritin</li><li class="lab last">Entzündungswert</li><li class="hi"><i></i>Taillenumfang</li><li>Gewicht</li><li>Körperfettanteil</li><li>Griffkraft</li><li>Ruhepuls</li><li class="hi"><i></i>Schlafdauer</li><li class="hi"><i></i>Recovery</li><li>HRV</li><li>Belastung</li><li class="hi"><i></i>Trainings geschafft</li><li>Mobilität</li><li>Liegestütz</li><li>Unterarmstütz</li><li>Aufstehen vom Stuhl</li><li>Ausdauertest</li><li>Ausdauerfitness</li><li>Energie</li><li>Stress</li><li>Ernährungsrahmen</li><li>Abende mit Alkohol</li><li class="grp">Vom Arzt</li><li class="lab">Blutdruck</li><li class="lab">Blutfette</li><li class="lab">HbA1c</li><li class="lab">Leberwerte</li><li class="lab">Nierenwerte</li><li class="lab">Schilddrüse</li><li class="lab hi"><i></i>Vitamin D</li><li class="lab">Ferritin</li><li class="lab last">Entzündungswert</li></ul></div>
+<div class="metric-col" aria-hidden="true"><ul><li class="hi">Taillenumfang</li><li>Gewicht</li><li>Körperfettanteil</li><li>Griffkraft</li><li>Ruhepuls</li><li class="hi">Schlafdauer</li><li class="hi">Recovery</li><li>HRV</li><li>Belastung</li><li class="hi">Trainings geschafft</li><li>Mobilität</li><li>Liegestütz</li><li>Unterarmstütz</li><li>Aufstehen vom Stuhl</li><li>Ausdauertest</li><li>Ausdauerfitness</li><li>Energie</li><li>Stress</li><li>Ernährungsrahmen</li><li>Abende mit Alkohol</li><li class="grp">Vom Arzt</li><li class="lab">Blutdruck</li><li class="lab">Blutfette</li><li class="lab">HbA1c</li><li class="lab">Leberwerte</li><li class="lab">Nierenwerte</li><li class="lab">Schilddrüse</li><li class="lab hi">Vitamin D</li><li class="lab">Ferritin</li><li class="lab last">Entzündungswert</li><li class="hi">Taillenumfang</li><li>Gewicht</li><li>Körperfettanteil</li><li>Griffkraft</li><li>Ruhepuls</li><li class="hi">Schlafdauer</li><li class="hi">Recovery</li><li>HRV</li><li>Belastung</li><li class="hi">Trainings geschafft</li><li>Mobilität</li><li>Liegestütz</li><li>Unterarmstütz</li><li>Aufstehen vom Stuhl</li><li>Ausdauertest</li><li>Ausdauerfitness</li><li>Energie</li><li>Stress</li><li>Ernährungsrahmen</li><li>Abende mit Alkohol</li><li class="grp">Vom Arzt</li><li class="lab">Blutdruck</li><li class="lab">Blutfette</li><li class="lab">HbA1c</li><li class="lab">Leberwerte</li><li class="lab">Nierenwerte</li><li class="lab">Schilddrüse</li><li class="lab hi">Vitamin D</li><li class="lab">Ferritin</li><li class="lab last">Entzündungswert</li></ul></div>
 <div class="copy">
 <h2 class="h2">Gemessen wird viel. <span class="soft">Im Mittelpunkt stehen drei.</span></h2>
 <p>Aus WHOOP, deinen Messungen, dem Bewegungs-Check, deinem Check-in und dem Befund deines Arztes. Welche Laborwerte gemessen werden, entscheidet dein Arzt. ARISTEIA bewertet keine Laborwerte.</p>
@@ -987,7 +962,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 <div class="wrap">
 <div class="check-box glow g-b">
 <div class="check-copy">
-<span class="tag"><i></i>EMPFOHLENER ERSTER SCHRITT</span>
+<span class="tag">EMPFOHLENER ERSTER SCHRITT</span>
 <h2 class="h2">Nicht sicher, wo du anfangen sollst? <span class="soft">Mach den Kurz-Check.</span></h2>
 <p class="lead">Sieben kurze Fragen zu Alltag, Schlaf, Training und Ziel. Danach weißt du, ob ARISTEIA zu dir passt, und wir sprechen im Erstgespräch über deine Antworten.</p>
 <a class="btn" href="#" onclick="openCheckModal(); return false;">Zum Kurz-Check</a>
@@ -1022,7 +997,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 <article class="doc" id="sailer-profile">
 <div class="photo"><img src="images/dr-sailer.jpg" alt="OA Dr. Johannes Sailer - Medizinischer Partner" style="width: 100%; height: auto; object-fit: cover;"></div>
 <div class="info">
-<span class="label"><i></i>Medizinischer Partner</span>
+<span class="label">Medizinischer Partner</span>
 <h3>OA Dr. Johannes Sailer</h3>
 <p class="role">Facharzt für Orthopädie und orthopädische Chirurgie, Oberarzt, Ordination in Schwechat bei Wien</p>
 <ul>
@@ -1229,7 +1204,6 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 .stack-copy h3{color:#FFFFFF}
 .stack-copy p{color:rgba(255,255,255,.86)}
 .stack-copy .label{color:#FFFFFF}
-.stack-copy .label i{background:#FFFFFF}
 .stack-media .overlay{position:static;padding:0;margin:0}
 .stack-media .panel{padding:14px 16px;width:100%;background:#FFFFFF}
 .stack-media .const{position:static;display:flex;flex-wrap:wrap;gap:8px}
@@ -1264,22 +1238,19 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 .faq details p{margin:0 0 24px;max-width:44rem;color:var(--muted);font-size:16px;line-height:1.6}
 @media (prefers-reduced-motion:reduce){.hero-copy .cta-note{opacity:1;animation:none}.faq summary::after{transition:none}}
 /* === Karten-Sprache auf der ganzen Seite (dezent) === */
-:root{--star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 88 88'%3E%3Cpath d='M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z'/%3E%3C/svg%3E");--card-dark:radial-gradient(75% 60% at 12% 0%, rgba(44,90,140,.95), transparent 70%),radial-gradient(70% 55% at 100% 100%, rgba(157,183,214,.30), transparent 70%),#0E1F38;--card-shadow:0 20px 60px rgba(14,32,58,.12),0 2px 6px rgba(14,32,58,.05);--card-shadow-hi:0 30px 70px rgba(14,32,58,.2),0 4px 10px rgba(14,32,58,.08)}
+:root{--card-dark:radial-gradient(75% 60% at 12% 0%, rgba(44,90,140,.95), transparent 70%),radial-gradient(70% 55% at 100% 100%, rgba(157,183,214,.30), transparent 70%),#0E1F38;--card-shadow:0 20px 60px rgba(14,32,58,.12),0 2px 6px rgba(14,32,58,.05);--card-shadow-hi:0 30px 70px rgba(14,32,58,.2),0 4px 10px rgba(14,32,58,.08)}
 
 /* So funktioniert: Schritt-Nummer wie auf den Karten, Stern im Bild, sanfter Schatten */
 .stack{counter-reset:schritt}
 .stack-card{counter-increment:schritt;background:#FFFFFF;border-color:#EEF0F3;box-shadow:var(--card-shadow)}
 .stack-copy::after{content:counter(schritt, decimal-leading-zero);margin-top:auto;font-family:var(--sans);font-weight:500;font-size:56px;line-height:1;letter-spacing:-0.03em;color:#183A66;opacity:.9}
-.stack-media::after{content:"";position:absolute;left:24px;top:24px;width:16px;height:16px;opacity:.6;background:#FFFFFF;-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;z-index:3;pointer-events:none}
 
 /* Handeln, messen, nachhalten: gleiche Ecken, Schatten und Stern wie die Karten */
 .tile{border-radius:24px;box-shadow:var(--card-shadow)}
-.tile:not(.plain)::after{content:"";position:absolute;left:22px;top:22px;width:15px;height:15px;background:#FFFFFF;-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;z-index:3;opacity:.6;pointer-events:none}
 
 /* Kurz-Check: Stern auf der dunklen Fläche, Schatten wie die Karten */
 .check-box{box-shadow:var(--card-shadow)}
 .check-preview{position:relative}
-.check-preview::before{content:"";position:absolute;left:28px;top:28px;width:16px;height:16px;opacity:.6;background:#FFFFFF;-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;pointer-events:none}
 
 /* Medizinischer Partner: weiße Karte mit Karten-Schatten */
 .doc{background:#FFFFFF;border:1px solid #ECEEF1;box-shadow:var(--card-shadow);border-radius:28px}
@@ -1297,12 +1268,10 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 
 /* Über mich und Bodensee-Karte: gleiche Ecken und Stern */
 .founder-image{box-shadow:var(--card-shadow)}
-.founder-image::after{content:"";position:absolute;left:28px;top:28px;width:16px;height:16px;opacity:.6;background:#FFFFFF;-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;pointer-events:none}
 .map-card{position:relative;background:var(--card-dark);border-radius:28px}
 .app-media{box-shadow:var(--card-shadow)}
 
 @media (max-width:860px){
-  .stack-media::after{display:none}
   .stack-card{position:relative}
   .stack-copy::after{position:absolute;right:22px;top:22px;margin:0;font-size:26px;color:#FFFFFF;opacity:.92;z-index:3}
   .stack-copy h3{padding-right:40px}
