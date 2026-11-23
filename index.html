@@ -650,7 +650,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 .karte__feld{position:absolute;left:calc(14 * var(--u));right:calc(14 * var(--u));top:calc(112 * var(--u));bottom:calc(14 * var(--u));overflow:hidden;border-radius:calc(20 * var(--u));background:linear-gradient(150deg, rgba(255,255,255,.96), rgba(255,255,255,.86));-webkit-backdrop-filter:var(--gl-blur);backdrop-filter:var(--gl-blur);box-shadow:0 2px 6px rgba(14,32,58,.08)}
 .karte::before,.karte__feld::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(150deg,rgba(255,255,255,.55),rgba(255,255,255,.08) 36%,rgba(255,255,255,.02) 64%,rgba(255,255,255,.28));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:3}
 .karte__feld::before{background:linear-gradient(150deg,rgba(255,255,255,.95),rgba(255,255,255,.14) 36%,rgba(255,255,255,.04) 64%,rgba(255,255,255,.5))}
-.karte__stern{position:absolute;left:calc(30 * var(--u));top:calc(30 * var(--u));width:calc(30 * var(--u));height:calc(30 * var(--u));fill:#FFFFFF;filter:drop-shadow(0 0 10px rgba(255,255,255,.25));z-index:2}
+.karte__stern{position:absolute;left:calc(30 * var(--u));top:calc(32 * var(--u));width:calc(20 * var(--u));height:calc(20 * var(--u));fill:#FFFFFF;opacity:.7;z-index:2}
 .karte__stern--unten{display:none}
 .karte__band{position:absolute;right:calc(30 * var(--u));top:calc(28 * var(--u));z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:calc(6 * var(--u));font-family:var(--sans);font-weight:500;font-size:calc(40 * var(--u));line-height:1;letter-spacing:-0.03em;color:#FFFFFF;white-space:nowrap;text-align:right}
 .karte__band em{font-style:normal;font-weight:400;font-family:var(--mono);font-size:calc(11.5 * var(--u));letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.78)}
@@ -1263,6 +1263,57 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 .faq summary:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:4px}
 .faq details p{margin:0 0 24px;max-width:44rem;color:var(--muted);font-size:16px;line-height:1.6}
 @media (prefers-reduced-motion:reduce){.hero-copy .cta-note{opacity:1;animation:none}.faq summary::after{transition:none}}
+/* === Karten-Sprache auf der ganzen Seite (dezent) === */
+:root{--star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='6 6 88 88'%3E%3Cpath d='M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z'/%3E%3C/svg%3E");--card-dark:radial-gradient(75% 60% at 12% 0%, rgba(44,90,140,.95), transparent 70%),radial-gradient(70% 55% at 100% 100%, rgba(157,183,214,.30), transparent 70%),#0E1F38;--card-shadow:0 20px 60px rgba(14,32,58,.12),0 2px 6px rgba(14,32,58,.05);--card-shadow-hi:0 30px 70px rgba(14,32,58,.2),0 4px 10px rgba(14,32,58,.08)}
+
+/* So funktioniert: Schritt-Nummer wie auf den Karten, Stern im Bild, sanfter Schatten */
+.stack{counter-reset:schritt}
+.stack-card{counter-increment:schritt;background:#FFFFFF;border-color:#EEF0F3;box-shadow:var(--card-shadow)}
+.stack-copy::after{content:counter(schritt, decimal-leading-zero);margin-top:auto;font-family:var(--sans);font-weight:500;font-size:56px;line-height:1;letter-spacing:-0.03em;color:#183A66;opacity:.9}
+.stack-media::after{content:"";position:absolute;left:24px;top:24px;width:16px;height:16px;opacity:.6;background:#FFFFFF;-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;z-index:3;pointer-events:none}
+
+/* Handeln, messen, nachhalten: gleiche Ecken, Schatten und Stern wie die Karten */
+.tile{border-radius:24px;box-shadow:var(--card-shadow)}
+.tile:not(.plain)::after{content:"";position:absolute;left:22px;top:22px;width:15px;height:15px;background:#FFFFFF;-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;z-index:3;opacity:.6;pointer-events:none}
+
+/* Kurz-Check: Stern auf der dunklen Fläche, Schatten wie die Karten */
+.check-box{box-shadow:var(--card-shadow)}
+.check-preview{position:relative}
+.check-preview::before{content:"";position:absolute;left:28px;top:28px;width:16px;height:16px;opacity:.6;background:#FFFFFF;-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;pointer-events:none}
+
+/* Medizinischer Partner: weiße Karte mit Karten-Schatten */
+.doc{background:#FFFFFF;border:1px solid #ECEEF1;box-shadow:var(--card-shadow);border-radius:28px}
+.doc li{background:#F4F6F9;border-radius:18px}
+.doc .photo{border-radius:18px}
+.person{background:#FFFFFF;border:1px solid #ECEEF1;border-radius:22px;box-shadow:var(--card-shadow)}
+
+/* Themen-Chips: helle Glas-Kärtchen */
+.chip{background:linear-gradient(150deg, rgba(255,255,255,.96), rgba(255,255,255,.8));border:1px solid #ECEEF1;box-shadow:0 6px 18px rgba(14,32,58,.06)}
+
+/* Fragen und Antworten: einzelne helle Karten */
+.faq-list{border-top:0;display:flex;flex-direction:column;gap:10px}
+.faq details{border:1px solid #ECEEF1;border-radius:20px;background:#FFFFFF;padding:0 26px;box-shadow:0 6px 18px rgba(14,32,58,.05);transition:box-shadow .5s cubic-bezier(.16,1,.3,1),translate .5s cubic-bezier(.16,1,.3,1)}
+.faq details[open]{box-shadow:var(--card-shadow)}
+
+/* Über mich und Bodensee-Karte: gleiche Ecken und Stern */
+.founder-image{box-shadow:var(--card-shadow)}
+.founder-image::after{content:"";position:absolute;left:28px;top:28px;width:16px;height:16px;opacity:.6;background:#FFFFFF;-webkit-mask:var(--star) center/contain no-repeat;mask:var(--star) center/contain no-repeat;pointer-events:none}
+.map-card{position:relative;background:var(--card-dark);border-radius:28px}
+.app-media{box-shadow:var(--card-shadow)}
+
+@media (max-width:860px){
+  .stack-media::after{display:none}
+  .stack-card{position:relative}
+  .stack-copy::after{position:absolute;right:22px;top:22px;margin:0;font-size:26px;color:#FFFFFF;opacity:.92;z-index:3}
+  .stack-copy h3{padding-right:40px}
+}
+/* Tiefe beim Überfahren mit der Maus (nicht bei den Kacheln von Dr. Sailer) */
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .tile,.check-box,.doc,.chip,.founder-image{transition:translate .6s cubic-bezier(.16,1,.3,1),box-shadow .6s cubic-bezier(.16,1,.3,1)}
+  .tile:hover,.check-box:hover,.founder-image:hover{translate:0 -6px;box-shadow:var(--card-shadow-hi)}
+  .chip:hover{translate:0 -3px;box-shadow:0 12px 26px rgba(14,32,58,.1)}
+  .faq details:hover{translate:0 -2px;box-shadow:var(--card-shadow)}
+}
 </style>
 <script src="/js/lenis.min.js"></script>
 <script>
