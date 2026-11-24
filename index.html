@@ -25,7 +25,7 @@
 <meta name="twitter:title" content="ARISTEIA · Gesundheits-Sparringspartner für Unternehmer am Bodensee">
 <meta name="twitter:description" content="Gesundheit mit System für Unternehmer am Bodensee: Kennzahlen jede Woche, WHOOP inklusive, persönlich vor Ort. Kostenloses Erstgespräch per Video.">
 <meta name="twitter:image" content="https://www.aristeiaconsulting.de/og-image.jpg">
-<title>ARISTEIA · Gesundheits-Sparringspartner für Unternehmer am Bodensee</title>
+<title>Gesundheit für Unternehmer am Bodensee | ARISTEIA</title>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -236,7 +236,8 @@ document.documentElement.classList.add('js');
 window.SITE_CONFIG={
   newsletter:false,
   sailerZitat:false,
-  kartenFoto:false
+  kartenFoto:false,
+  gaId:''          // Google-Analytics-Mess-ID, z. B. 'G-XXXXXXX'. Leer = kein Banner, kein Tracking.
 };
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-config]').forEach(function(el){if(window.SITE_CONFIG[el.dataset.config])el.hidden=false})});
 </script>
@@ -1080,10 +1081,15 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 </div>
 </div>
 </div>
-<div class="legal"><span>© 2026 Timo Breimeier · ARISTEIA Consulting · Fitzenweiler 1 · 88677 Markdorf</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div>
+<div class="legal"><span>© 2026 Timo Breimeier · ARISTEIA Consulting · Fitzenweiler 1 · 88677 Markdorf</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a><span class="consent-link" hidden> · <a href="#cookie-einstellungen" id="consent-open">Cookie-Einstellungen</a></span></span></div>
 <p class="disclaimer">ARISTEIA begleitet gesunde Erwachsene beim Lebensstil. Diagnose und Behandlung bleiben beim Arzt. Bei Beschwerden lass dich bitte ärztlich untersuchen. Ergebnisse sind individuell.</p>
 </div>
 </footer>
+<div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-titel" hidden>
+<p class="consent__titel" id="consent-titel">Darf ich Google Analytics nutzen?</p>
+<p class="consent__text">Damit sehe ich, wie diese Seite genutzt wird, zum Beispiel welche Bereiche gelesen werden. Google setzt dafür Cookies. Das passiert nur mit deiner Zustimmung, und du kannst sie jederzeit im Footer unter „Cookie-Einstellungen“ widerrufen. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+<div class="consent__btns"><button type="button" class="consent__btn" data-consent="nein">Ablehnen</button><button type="button" class="consent__btn" data-consent="ja">Zustimmen</button></div>
+</div>
 <script>(function(){var n=document.querySelector('.nav');if(!n)return;var f=function(){n.classList.toggle('top',window.scrollY<40)};window.addEventListener('scroll',f,{passive:true});f();})();</script>
 
 <style>
@@ -1282,6 +1288,17 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
   .chip:hover{translate:0 -3px;box-shadow:0 12px 26px rgba(14,32,58,.1)}
   .faq details:hover{translate:0 -2px;box-shadow:var(--card-shadow)}
 }
+
+/* Cookie-Banner für Google Analytics (nur aktiv, wenn SITE_CONFIG.gaId gesetzt ist) */
+.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:120;max-width:520px;margin:0 auto;padding:22px 22px 18px;border-radius:22px;background:linear-gradient(150deg,rgba(255,255,255,.97),rgba(255,255,255,.9));-webkit-backdrop-filter:var(--gl-blur);backdrop-filter:var(--gl-blur);box-shadow:0 20px 60px rgba(14,32,58,.2),0 2px 6px rgba(14,32,58,.08);border:1px solid #ECEEF1;color:var(--ink)}
+.consent[hidden]{display:none}
+.consent__titel{margin:0 0 8px;font-weight:500;font-size:17px}
+.consent__text{margin:0;font-size:14px;line-height:1.5;color:var(--text)}
+.consent__text a{color:var(--ink)}
+.consent__btns{display:flex;gap:10px;margin-top:16px}
+.consent__btn{flex:1;min-height:44px;border-radius:12px;border:1px solid var(--ink);background:#FFFFFF;color:var(--ink);font:500 15px var(--sans);cursor:pointer}
+.consent__btn:hover{background:var(--ink);color:#FFFFFF}
+.consent__btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 </style>
 <script src="/js/lenis.min.js"></script>
 <script>
@@ -1458,6 +1475,35 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
     ty = Math.max(-0.5, Math.min(0.5, (e.clientY - r.top) / r.height - 0.5));
     if (!raf) raf = requestAnimationFrame(tick);
   }, { passive: true });
+})();
+
+// Google Analytics nur nach Zustimmung (Schalter: SITE_CONFIG.gaId)
+(function(){
+  var id = window.SITE_CONFIG && window.SITE_CONFIG.gaId; if (!id) return;
+  var KEY = 'aristeia-consent', box = document.getElementById('consent'), link = document.querySelector('.consent-link');
+  if (!box) return;
+  if (link) link.hidden = false;
+  var get = function(){ try { return localStorage.getItem(KEY); } catch(e) { return null; } };
+  var set = function(v){ try { localStorage.setItem(KEY, v); } catch(e) {} };
+  var load = function(){
+    if (window.__gaLoaded) return; window.__gaLoaded = true;
+    window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date()); gtag('config', id);
+    var sc = document.createElement('script'); sc.async = true; sc.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id); document.head.appendChild(sc);
+  };
+  var clearCookies = function(){
+    document.cookie.split(';').forEach(function(c){ var n = c.split('=')[0].trim(); if (/^_ga/.test(n)) { ['', '.' + location.hostname, '.' + location.hostname.replace(/^www\./, '')].forEach(function(d){ document.cookie = n + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : ''); }); } });
+  };
+  var show = function(){ box.hidden = false; };
+  box.addEventListener('click', function(e){
+    var b = e.target.closest('[data-consent]'); if (!b) return;
+    var v = b.getAttribute('data-consent'), was = get(); set(v); box.hidden = true;
+    if (v === 'ja') load(); else { clearCookies(); if (was === 'ja') location.reload(); }
+  });
+  var open = document.getElementById('consent-open');
+  if (open) open.addEventListener('click', function(e){ e.preventDefault(); show(); });
+  if (location.hash === '#cookie-einstellungen') show();
+  var v = get(); if (v === 'ja') load(); else if (v !== 'nein') show();
 })();
 
 window.questions=[{q:"Was beschreibt dich am besten?",opts:["Unternehmer/in oder Gründer/in","Geschäftsführer/in oder Vorstand","Führungskraft","Selbstständig mit eigener Praxis, Kanzlei oder eigenem Büro","Etwas anderes"]},{q:"Wie viel Energie hast du an einem normalen Arbeitstag um 15 Uhr noch?",opts:["Volle Leistung","Gut, aber nicht mehr ganz frisch","Es braucht Kaffee oder etwas Süßes","Ziemlich wenig"]},{q:"Wie erholt startest du in den Tag?",opts:["Fast immer ausgeruht","Meistens","Eher selten","Kaum"]},{q:"Wie sieht Bewegung bei dir gerade aus?",opts:["Regelmäßig, aber ohne klaren Plan","Mal mehr, mal weniger, es fehlt die Regelmäßigkeit","Viel und intensiv, die Erholung kommt manchmal zu kurz","Gerade wenig, ich suche den richtigen Einstieg"],persona:["STRUKTUR","STRUKTUR","ERHOLUNG","EINSTIEG"]},{q:"Was würde dir am meisten helfen?",opts:["Ein Plan, der in meinen vollen Kalender passt","Klarheit, was ich konkret tun soll","Jemand, der dranbleibt und nachhakt","Eine Lösung für Reisen und unregelmäßige Tage","Messbar sehen, dass es wirkt"]},{q:"Was soll in den nächsten 12 Monaten anders sein?",opts:["Mehr Energie im Arbeitstag","Fitter und stärker werden","Gewicht oder Körperfett verändern","Besser schlafen und abschalten","Gesundheit langfristig absichern"]},{q:"Wann möchtest du starten?",opts:["Sofort","In den nächsten 4 Wochen","In den nächsten 3 Monaten","Ich informiere mich erst einmal"]}];
