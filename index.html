@@ -233,6 +233,11 @@
 <link rel="stylesheet" href="/fonts/fonts.css">
 <script>
 document.documentElement.classList.add('js');
+(function(){var d=document.documentElement,r=document.referrer||'';
+  var intern=r.indexOf(location.origin)===0;
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(intern||still){d.classList.add('ohne-vorhang')}else{setTimeout(function(){d.classList.add('ohne-vorhang')},1000)}
+})();
 window.SITE_CONFIG={
   newsletter:false,
   sailerZitat:false,
@@ -241,6 +246,14 @@ window.SITE_CONFIG={
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-config]').forEach(function(el){if(window.SITE_CONFIG[el.dataset.config])el.hidden=false})});
 </script>
 <style>
+/* Lande-Animation: weißer Vorhang, ARISTEIA-Stern dreht sich ein */
+#vorhang{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;background:#FFFFFF;animation:vorhangAus .3s ease-out .6s forwards}
+#vorhang svg{width:58px;height:58px;fill:#183A66;animation:sternDreh .5s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes sternDreh{0%{opacity:0;transform:perspective(600px) rotateY(-180deg) scale(.9)}}
+@keyframes vorhangAus{100%{opacity:0;visibility:hidden}}
+.ohne-vorhang #vorhang{display:none}
+@media (prefers-reduced-motion:reduce){#vorhang{display:none}}
+
 [hidden]{display:none!important}
 :root{
   --ink:#0E1420; --text:#2E2F2C; --muted:#5F605C; --soft:#8B8C87;
@@ -693,6 +706,7 @@ footer{background:var(--night);color:#FFFFFF;padding:70px 0 40px}
 </style>
 </head>
 <body>
+<div id="vorhang" aria-hidden="true"><svg viewBox="6 6 88 88" focusable="false"><path d="M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z"/></svg></div>
 
 <nav class="nav top" aria-label="Hauptnavigation">
 <a class="logo" href="#start"><svg class="logo-star" viewBox="6 6 88 88" aria-hidden="true" focusable="false"><path d="M50,10 Q53,47 90,50 Q53,53 50,90 Q47,53 10,50 Q47,47 50,10 Z" fill="#183A66"/></svg>ARISTEIA</a>
