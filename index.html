@@ -237,7 +237,7 @@ window.SITE_CONFIG={
   newsletter:false,
   sailerZitat:false,
   kartenFoto:false,
-  gaId:''          // Google-Analytics-Mess-ID, z. B. 'G-XXXXXXX'. Leer = kein Banner, kein Tracking.
+  gaId:'G-FPV1WB0YBD'          // Google-Analytics-Mess-ID, z. B. 'G-XXXXXXX'. Leer = kein Banner, kein Tracking.
 };
 document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('[data-config]').forEach(function(el){if(window.SITE_CONFIG[el.dataset.config])el.hidden=false})});
 </script>
@@ -1488,7 +1488,7 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
   var load = function(){
     if (window.__gaLoaded) return; window.__gaLoaded = true;
     window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); };
-    gtag('js', new Date()); gtag('config', id);
+    gtag('js', new Date()); gtag('config', id, { allow_google_signals: false, allow_ad_personalization_signals: false });
     var sc = document.createElement('script'); sc.async = true; sc.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id); document.head.appendChild(sc);
   };
   var clearCookies = function(){
