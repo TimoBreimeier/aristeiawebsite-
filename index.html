@@ -1310,7 +1310,11 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.consent{animation:none}}
 .consent__titel{margin:0 0 14px;font-weight:500;font-size:20px;line-height:1.25;letter-spacing:-0.01em}
 .consent__text{margin:0;font-size:15.5px;line-height:1.6;color:var(--text)}
-.consent__btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.consent__btns{display:grid;grid-template-columns:1.45fr 1fr;gap:10px;margin-top:24px;align-items:center}
+.consent__btn[data-consent="ja"]{min-height:54px;background:#183A66;font-size:15.5px}
+.consent__btn[data-consent="ja"]:hover{background:#2C5A8C}
+.consent__btn[data-consent="nein"]{min-height:46px;background:#E1E5EA;color:var(--ink);font-size:14px}
+.consent__btn[data-consent="nein"]:hover{background:#D3D8DF}
 .consent__btn,.consent__save{min-height:50px;padding:0 16px;border-radius:999px;border:0;background:var(--ink);color:#FFFFFF;font:500 15px var(--sans);cursor:pointer;transition:background .2s ease}
 .consent__btn:hover,.consent__save:hover{background:#26303F}
 .consent__more{display:block;width:100%;min-height:50px;margin-top:10px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font:500 15px var(--sans);cursor:pointer;transition:background .2s ease}
@@ -1330,7 +1334,7 @@ html.dlg-open,html.dlg-open body{overflow:hidden}
 .consent__link{margin:2px 0 0;font-size:13.5px;line-height:1.5;color:var(--text)}
 .consent__link a,.consent__text a{color:var(--ink)}
 .consent__save{width:100%}
-@media (max-width:420px){.consent{padding:26px 20px 22px}.consent__btns{grid-template-columns:1fr}.consent__titel{font-size:19px}}
+@media (max-width:420px){.consent{padding:26px 20px 22px}.consent__btns{grid-template-columns:1fr}.consent__btn[data-consent="nein"]{width:86%;justify-self:center}.consent__titel{font-size:19px}}
 </style>
 <script src="/js/lenis.min.js"></script>
 <script>
