@@ -3,6 +3,19 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "aristeiawebsite.vercel.app"
+        }
+      ],
+      "destination": "https://www.aristeiaconsulting.de/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/kurz-check",
